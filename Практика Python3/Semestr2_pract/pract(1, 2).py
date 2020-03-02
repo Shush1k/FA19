@@ -1,49 +1,62 @@
-import math
+from math import pi, atan
+
 
 def recurrent(x, n=0, e=0):
-    if x > 1:
-        M = -1
-        L = 1
-        P = x
-        res = M / (L * P)
-        s = f'-1/({x}) + '  # Проверка ряда
-        if e:
-            while abs(M / (L * P)) > e:
-                M = -M
-                L = L + 2
-                P = P * x ** 2
-                res += M / (L * P)
-                s += f'{M}/({L}*{P}) + '  # Проверка ряда
-        if n:
-            for i in range(1, n):
-                M = -M
-                L = L + 2
-                P = P * x**2
-                res += M / (L * P)
-                s += f'{M}/({L}*{P}) + '  # Проверка ряда
-        return math.pi / 2 + res, s
-    else:
-        return None, None
+    M = -1
+    L = 1
+    P = x
+    res = M / (L * P)
+    s = f'-1/({x}) + '  # Проверка ряда
+    if e:
+        while abs(M / (L * P)) > e:
+            M = -M
+            L = L + 2
+            P = P * x ** 2
+            res += M / (L * P)
+            s += f'{M}/({L}*{P}) + '  # Проверка ряда
+    if n:
+        for _ in range(1, n):
+            M = -M
+            L = L + 2
+            P = P * x**2
+            res += M / (L * P)
+            s += f'{M}/({L}*{P}) + '  # Проверка ряда
+    return pi / 2 + res, s
 
-# Task_1
-x = float(input('x = '))
-print(math.atan(x), f'- True при x = {x}')
-print('//////////////////////////////////')
-for i in range(5, 11):
-    res, s = recurrent(x, i)
-    print(res, f'- при n = {i}')
-    # print(s[:-2])  # Проверка ряда
-    if i == 10:
-        print('//////////////////////////////////')
-    else:
-        print()
 
-# Task_2
-x = float(input('x = '))
-print(math.atan(x), '- True')
-print()
-res, s = recurrent(x=x, e=10**-3)
-print('С точностью E = 10^-3:', res)
-print()
-res, s = recurrent(x=x, e=10**-5)
-print('С точностью E = 10^-5:', res)
+def Task1():
+    """Task_1"""
+    x = float(input('x = '))
+    while not x > 1:
+        print('Неверное значение x')
+        x = float(input('x = '))
+    print(atan(x), f'- True при x = {x}')
+    print('//////////////////////////////////')
+    for i in range(5, 11):
+        res, s = recurrent(x, i)
+        print(res, f'- при n = {i}')
+        #print(s[:-2])  #Весь ряд
+        if i == 10:
+            print('//////////////////////////////////')
+        else:
+            print()
+
+def Task2():
+    """Task_2"""
+    x = float(input('x = '))
+    print(atan(x), '- True')
+    print()
+    res, s = recurrent(x=x, e=10**-3)
+    #print(s[:-2])  #Весь ряд
+    print('С точностью E = 10^-3:', res)
+    print()
+    res, s = recurrent(x=x, e=10**-5)
+    print('С точностью E = 10^-5:', res)
+
+def main():
+    Task1()
+    Task2()
+
+if __name__ == "__main__":
+    main()
+    
