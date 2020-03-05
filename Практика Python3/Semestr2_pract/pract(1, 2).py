@@ -30,27 +30,26 @@ def Task1():
     while not x > 1:
         print('Неверное значение x')
         x = float(input('x = '))
-    print(atan(x), f'- True при x = {x}')
-    print('//////////////////////////////////')
+    print(atan(x), f'- Верно при x = {x}')
+    print('/'*34)
     for i in range(5, 11):
         res, s = recurrent(x, i)
         print(res, f'- при n = {i}')
-        #print(s[:-2])  #Весь ряд
+        print(s[:-2])  #Весь ряд
         if i == 10:
-            print('//////////////////////////////////')
+            print('/'*34)
         else:
             print()
 
 def Task2():
     """Task_2"""
     x = float(input('x = '))
-    print(atan(x), '- True')
+    print(atan(x), '- Проверка от модуля math')
     print()
-    res, s = recurrent(x=x, e=10**-3)
-    #print(s[:-2])  #Весь ряд
+    res, _ = recurrent(x=x, e=10**-3)
     print('С точностью E = 10^-3:', res)
     print()
-    res, s = recurrent(x=x, e=10**-5)
+    res, _ = recurrent(x=x, e=10**-5)
     print('С точностью E = 10^-5:', res)
 
 def main():
