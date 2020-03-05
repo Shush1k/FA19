@@ -35,11 +35,12 @@ def Task1():
     for i in range(5, 11):
         res, s = recurrent(x, i)
         print(res, f'- при n = {i}')
-        print(s[:-2])  #Весь ряд
+        print(s[:-2])  # Весь ряд
         if i == 10:
             print('/'*34)
         else:
             print()
+
 
 def Task2():
     """Task_2"""
@@ -52,10 +53,11 @@ def Task2():
     res, _ = recurrent(x=x, e=10**-5)
     print('С точностью E = 10^-5:', res)
 
+
 def main():
     Task1()
     Task2()
 
+
 if __name__ == "__main__":
     main()
-    
