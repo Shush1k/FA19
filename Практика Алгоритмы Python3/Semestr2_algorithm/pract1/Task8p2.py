@@ -115,7 +115,7 @@ def main():
             4: (fake.word(), fake.date(pattern='%d.%m.%Y'), randint(1, 500), randint(5000, 1400000))
         }
 
-    client_list.append(d[r](*d_val[r]))
+        client_list.append(d[r](*d_val[r]))
 
     for client in client_list:
         client.info()
