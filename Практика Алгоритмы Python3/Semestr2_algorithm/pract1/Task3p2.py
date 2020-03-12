@@ -104,10 +104,6 @@ class EquilateralTriangle(Triangle):
 
 
 def main():
-
-    #Triangle(6, 8, 90).info()
-    #RectangularTriangle(6, 7).info()
-
     try:
         n = int(input("Количество треугольников = "))
     except ValueError:
