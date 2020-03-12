@@ -1,5 +1,5 @@
 import classFigure
-from math import pi, sqrt
+from math import pi
 class Circle(classFigure.Figure):
     def __init__(self, r):
         self.r = r

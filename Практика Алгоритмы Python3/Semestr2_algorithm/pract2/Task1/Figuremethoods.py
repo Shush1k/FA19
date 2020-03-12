@@ -1,6 +1,6 @@
+# Figure methods
 def get_perimeter(self):
     self.perimeter = 0
-
 def get_square(self):
     self.square = 0
 def info(self, name_class):

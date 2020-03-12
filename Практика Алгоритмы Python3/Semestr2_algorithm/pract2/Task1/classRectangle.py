@@ -1,10 +1,8 @@
 import classFigure
-
 class Rectangle(classFigure.Figure):
     """
     Класс прямоугольника
     """
-
     def __init__(self, a, b):
         self.a = a
         self.b = b

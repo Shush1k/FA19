@@ -13,12 +13,24 @@ person1.get_perimeter()
 person1.info("Rectangle")
 """
 
-# Это типо класс
-person1 = classRectangle.Rectangle(3, 4)
-person1.get_square()
-person1.get_perimeter()
-person1.info("Rectangle")
+# Это типо класс Прямоугольника
+figure1 = classRectangle.Rectangle(3, 4)
+figure1.get_square()
+figure1.get_perimeter()
+figure1.info("Rectangle")
 
+# Это типо класс Треугольника
+figure2 = classTriangle.Triangle(3, 4, 5)
+figure2.check()
+figure2.get_square()
+figure2.get_perimeter()
+figure2.info("Triangle")
+
+# Это типо класс Круга
+figure2 = classCircle.Circle(4)
+figure2.get_square()
+figure2.get_perimeter()
+figure2.info("Circle")
 """
 def main():
     try:
