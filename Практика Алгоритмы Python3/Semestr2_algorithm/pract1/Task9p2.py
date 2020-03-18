@@ -26,8 +26,6 @@ class ProgramSoftware:
               "\nДата установки:", self.date)
 
     def date_PO(self, user_date):
-        """Можно было использовать pattern = '%Y.%m.%d', но я захотел так"""
-        # print(fake.date(pattern='%Y.%m.%d'))
         date = self.date
         new_date = ".".join(date.split("-"))
 

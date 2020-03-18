@@ -9,11 +9,11 @@ from random import randint
 
 class Currency:
     # Покупка
-    cur_eur = 70
-    cur_dollar = 65
+    cur_eur = 85
+    cur_dollar = 75
     # Продажа
-    sell_eur = 67
-    sell_dollar = 62
+    sell_eur = 80
+    sell_dollar = 70
 
     def __init__(self, user_money, trade):
         self.user_money = user_money
