@@ -1,4 +1,7 @@
-import classFigure, classRectangle, classCircle, classTriangle 
+import classFigure 
+import classRectangle
+import classCircle
+import classTriangle
 from random import randint
 def main():
     try:

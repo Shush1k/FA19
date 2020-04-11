@@ -1,3 +1,4 @@
+# Методы триугольника
 from math import sqrt
 def check(self):
     a = self.a

@@ -1,3 +1,4 @@
+# Figure methods
 def get_perimeter(self):
     self.perimeter = 0
 def get_square(self):

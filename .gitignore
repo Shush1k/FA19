@@ -1,3 +1,9 @@
 
 .DS_Store
+<<<<<<< HEAD
 __pycache__/
+=======
+*.pyc
+.cpython-37.pyc
+.cpython-37
+>>>>>>> dev

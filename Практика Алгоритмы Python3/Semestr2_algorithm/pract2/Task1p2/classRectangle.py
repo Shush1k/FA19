@@ -1,5 +1,10 @@
+<<<<<<< HEAD:Практика Алгоритмы Python3/Semestr2_algorithm/pract2/Task1p2/classRectangle.py
 from classFigure import Figure
 class Rectangle(Figure):
+=======
+import classFigure
+class Rectangle(classFigure.Figure):
+>>>>>>> dev:Практика Алгоритмы Python3/Semestr2_algorithm/pract2/Task1/classRectangle.py
     """
     Класс прямоугольника
     """
