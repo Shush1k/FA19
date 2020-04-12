@@ -10,4 +10,4 @@ def seq_of_ones_and_zeros(a, b):
     return seq_of_ones_and_zeros(a, b - 1) + seq_of_ones_and_zeros(a - 1, b - 1)
 
 
-print(seq_of_ones_and_zeros(1, 2))
+print(seq_of_ones_and_zeros(2, 5))
