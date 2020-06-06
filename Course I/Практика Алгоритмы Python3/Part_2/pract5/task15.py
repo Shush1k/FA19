@@ -28,6 +28,7 @@ class Main(object):
 
         datadict = self.datadict
         student_list = self.student_list
+        # Частый способ сортировки списка через lambda происходит через запись key=lambda x: (x[4], x[0]), в данном случае итерирует по значению 4, а затем 0.
         student_list.sort(key=lambda x: (x[4], x[0]))
 
         for collection in student_list:
