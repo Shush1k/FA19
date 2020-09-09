@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f891e99-e60c-46ba-a9ab-ec011d799cf4" name="Default Changelist" comment="" />
+    <list default="true" id="8f891e99-e60c-46ba-a9ab-ec011d799cf4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Pract/Pract1/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Pract/Pract1/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Pract/Pract1/src/com/company/Task1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Pract/Pract1/src/com/company/Task10.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Pract/Pract1/src/com/company/Task11.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Pract/Pract1/src/com/company/Task12.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Pract/Pract1/src/com/company/Task2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Pract/Pract1/src/com/company/Task3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Pract/Pract1/src/com/company/Task4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Pract/Pract1/src/com/company/Task5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Pract/Pract1/src/com/company/Task6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Pract/Pract1/src/com/company/Task7.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Pract/Pract1/src/com/company/Task8.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/Pract/Pract1/src/com/company/Task9.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1hHunr71ULbNvqEYgZ8FCssSOpL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -14,7 +33,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Java" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/Practicum" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -30,9 +50,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1599679634557">
+    <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1599680789039">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="740" y="335" key="FileChooserDialogImpl/0.0.1920.1160@0.0.1920.1160" timestamp="1599679634557" />
+    <state x="740" y="335" key="FileChooserDialogImpl/0.0.1920.1160@0.0.1920.1160" timestamp="1599680789039" />
   </component>
 </project>
