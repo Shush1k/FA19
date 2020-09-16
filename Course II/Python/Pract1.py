@@ -23,7 +23,7 @@ def objMove(obj, data):
 
 def anime():
     point_figure[4] += point_figure[5]
-    objmove(point_oval,point_figure)
+    objMove(point_oval,point_figure)
     
     root.after(1, anime)
 
