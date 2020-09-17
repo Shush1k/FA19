@@ -1,4 +1,5 @@
 package com.shush1k;
+import java.util.Random;
 /*Создайте класс, который описывает вектор (в трёхмерном пространстве).
 У него должны быть:
 a. конструктор с параметрами в виде списка координат x, y, z
@@ -42,6 +43,27 @@ public class Vector {
     public double VectorAngle(Vector vector){
         // Угол между векторами
         return Scalar(vector)/ (Math.abs(vector.Len())*Math.abs(Len()));
-    //Сумма и разность и  Static
+
+    }
+    //Сумма и разность
+    public Vector Sum(Vector vector){
+        return new Vector(x+vector.x, y+vector.y, z+vector.z);
+    }
+    public Vector Diff(Vector vector){
+        return new Vector(x-vector.x, y-vector.y, z-vector.z);
+    }
+    public static Vector[] VectorGen(int N){
+        // Массив векторов
+        Vector[] arr;
+        arr = new Vector[N];
+        for (int i=0; i<N;i++){
+            Random numb = new Random();
+            int X = numb.nextInt(100);
+            int Y = numb.nextInt(100);
+            int Z = numb.nextInt(100);
+            arr[i] = new Vector(X,Y,Z);
+        }
+        return arr;
+
     }
 }
