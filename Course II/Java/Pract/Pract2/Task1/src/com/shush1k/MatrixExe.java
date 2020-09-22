@@ -15,8 +15,7 @@ public class MatrixExe {
             int[][] res = new int[obj1.n][obj2.m];
             for (int i = 0; i < obj1.n; i++){
                 for (int j = 0; j < obj2.m; j++){
-                    int result = obj1.matrix[i][j] + obj2.matrix[i][j];
-                    res[i][j] = result;
+                    res[i][j] = obj1.matrix[i][j] + obj2.matrix[i][j];
                 }
             }
 
@@ -32,8 +31,7 @@ public class MatrixExe {
             int[][] res = new int[obj1.n][obj2.m];
             for (int i = 0; i < obj1.n; i++){
                 for (int j = 0; j < obj2.m; j++){
-                    int result = obj1.matrix[i][j] - obj2.matrix[i][j];
-                    res[i][j] = result;
+                    res[i][j] = obj1.matrix[i][j] - obj2.matrix[i][j];
                 }
             }
 
@@ -47,7 +45,7 @@ public class MatrixExe {
             return null;
         }
         else {
-            int [][] res = new int[obj1.n][obj2.m];
+            int[][] res = new int[obj1.n][obj2.m];
             for (int i = 0; i < obj1.n; i++){
                 for (int j = 0; j < obj2.m; j++){
                     for (int v = 0; v < obj1.m; v++){

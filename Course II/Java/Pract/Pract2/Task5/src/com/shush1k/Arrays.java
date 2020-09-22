@@ -12,7 +12,10 @@ public class Arrays {
     public Arrays(int[] value, int[] scale){
         values = value;
         scales = scale;
-
+        /*создаем массив третий пример:
+       Вход: ([1,2,3], [1,2, 10)
+       Сделать: [1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+       Вернуть рандомный элемент из массива!*/
         }
 }
 

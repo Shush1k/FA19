@@ -49,7 +49,7 @@ public class Main {
         Matrix tran_obj1 = obj1.transposed();
         tran_obj1.getValue();
 
-        System.out.println("\nМатрица 5(квадратная):");
+        System.out.println("\nМатрица 5 (квадратная):");
         Matrix obj5 = new Matrix(2, 2);
         obj5.getValue();
         int exp = 2;
