@@ -31,7 +31,7 @@ public class Main {
         System.out.println(coll.size());
     }
     public static void buildDict(String text){
-        /** метод к первой задаче*/
+        /* метод к первой задаче*/
         text = text.toLowerCase();
         int[] result = new int['я' - 'а'+1];
         for(int i=0; i<text.length(); i++){
@@ -87,7 +87,7 @@ public class Main {
         return resultMap;
     }
     public static <T>Collection<T> removeDuplications(Collection<T> coll){
-        /** Метод ко второй задаче*/
+        /* Метод ко второй задаче*/
         return new HashSet<>(coll);
     }
 }
