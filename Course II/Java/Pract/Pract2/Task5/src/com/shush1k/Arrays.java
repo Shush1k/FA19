@@ -6,16 +6,34 @@ package com.shush1k;
 В среднем, значение «1» должно возвращаться в 2 раза реже, чем значение «2» и в десять раз реже, чем значение «3».
  */
 public class Arrays {
-    int[] values;
-    int[] scales;
-
-    public Arrays(int[] value, int[] scale){
-        values = value;
-        scales = scale;
-        /*создаем массив третий пример:
-       Вход: ([1,2,3], [1,2, 10])
-       Сделать: [1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
-       Вернуть: рандомный элемент из массива!*/
+    int[] new_arr;
+    /*создаем третий массив, пример:
+        Вход: ([1,2,3], [1,2, 10])
+        Сделать: [1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+        Вернуть: рандомный элемент из массива!*/
+    public Arrays(int[] values, int[] scales){
+        int sum = 0;
+        // Длина нового массива
+        for (int i : scales) {
+            sum += i;
         }
+        new_arr = new int[sum];
+        // Добавляем элементы в массив
+        int k = 0;
+        System.out.print("Массив: ");
+        for(int i = 0; i < scales.length; i++){
+            for(int j = 0; j < scales[i]; j++) {
+                new_arr[k] = values[i];
+                k += 1;
+            }
+        }
+        System.out.println(java.util.Arrays.toString(new_arr));
+
+        }
+    public void getRandom(){
+        double random =  (int)(Math.random() * new_arr.length-1);
+        System.out.println("\nПолученный элемент: "+new_arr[(int) random]);
+    }
+
 }
 
