@@ -1,5 +1,5 @@
-from tkinter import *
-from math import *
+from tkinter import Tk, Canvas
+from math import pi, sin, cos
 import time
 root = Tk()
 root.title("Спираль_Архимеда")
