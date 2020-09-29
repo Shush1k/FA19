@@ -30,6 +30,7 @@ def redraw():
 
 
 root = tk.Tk()
+root.title("Дождь")
 width = 600
 height = 600
 canvas = tk.Canvas(root, width=width, height=height)
