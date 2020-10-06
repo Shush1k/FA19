@@ -1,4 +1,4 @@
-package com.work3_2;
+package com.work3_2_mine;
 
 public class Fahrenheit implements Convert{
 
