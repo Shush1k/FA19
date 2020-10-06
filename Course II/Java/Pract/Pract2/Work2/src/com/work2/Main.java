@@ -1,4 +1,4 @@
-package com.shush1k;
+package com.work2;
 import java.util.*;
 /*
 1)Реализовать метод, который принимает коллекцию и возвращает коллекцию без вопросов
