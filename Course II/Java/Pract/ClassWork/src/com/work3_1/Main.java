@@ -3,10 +3,10 @@ package com.work3_1;
 // StringBuilder
 public class Main {
     public static void main(String[] args) {
-//        Print book = new Print("Ivan", "Ivanov");
-//        book.print();
-//        Printable.read();
-//        System.out.println("\n");
+        Print book = new Print("Ivan", "Ivanov");
+        book.print();
+        Printable.read();
+        System.out.println("\n");
 //
 //
 //
