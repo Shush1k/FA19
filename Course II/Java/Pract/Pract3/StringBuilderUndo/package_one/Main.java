@@ -1,4 +1,4 @@
-package src.com.package_one;
+package package_one;
 
 public class Main {
     public static void main(String[] args) {

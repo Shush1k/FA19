@@ -1,4 +1,4 @@
-package src.com.package_one;
+package package_one;
 
 public class DeleteAction implements Action{
     private int size;
