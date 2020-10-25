@@ -14,6 +14,7 @@ c = tk.Canvas(root, width=width, height=height, bg="black")
 c.pack()
 c.create_rectangle(0, height//2, width+2, height+2, fill='grey')
 
+
 class Ball:
 
     def __init__(self, c, x1, y1, x2, y2, radius, mass, color="white"):
@@ -30,52 +31,60 @@ class Ball:
         self.v = 3
         self.F_str = 0.47 * self.v**2 * radius
         self.mass = mass
+        self.up_coeff = 0.05
         self.Acceleration = self.F_str / mass
         self.ball = c.create_oval(self.x1 - self.radius, self.y1 - self.radius, self.x2 +
                                   self.radius, self.y2 + self.radius, fill=color, outline='white', width=2)
-
+    # Функции движения
+    # частицы с малой массой могут не иметь инерции
+    # граница height + 1 выглядит лучше, чем height
     def move_ball(self):
-        if c.coords(self.ball)[3] < 300:
+        if c.coords(self.ball)[3] < height//2:
             c.move(self.ball, 0, self.v)
             c.after(1000//60, self.move_ball)
-        elif 300 <= c.coords(self.ball)[3] < 600:
+        # self.F_str*0.1 чтобы было наглядно
+        elif height//2 <= c.coords(self.ball)[3] + self.F_str*0.1 < height:
             c.move(self.ball, 0, self.F_str*0.1)
             c.after(1000//60, self.move_ball)
-        elif c.coords(self.ball)[3] >= 600:
+        else:
+            c.move(self.ball, 0, height + 1 - c.coords(self.ball)[3])
             c.after(1000//60, self.iter_1)
 
     def iter_1(self):
-        if c.coords(self.ball)[3] >= 585:
+        if c.coords(self.ball)[3] - self.Acceleration >= height - 15:
             c.move(self.ball, 0, -self.Acceleration)
             c.after(1000//60, self.iter_1)
-        elif c.coords(self.ball)[3] <= 600:
+        elif c.coords(self.ball)[3] <= height:
             c.after(1000//60, self.iter_2)
 
     def iter_2(self):
-        if c.coords(self.ball)[3] < 600:
+        if c.coords(self.ball)[3] + self.Acceleration < height:
             c.move(self.ball, 0, self.Acceleration)
             c.after(1000//60, self.iter_2)
         else:
+            c.move(self.ball, 0, height + 1 - c.coords(self.ball)[3])
             c.after(1000//60, self.iter_3)
 
     def iter_3(self):
-        if c.coords(self.ball)[3] >= 595:
+        if c.coords(self.ball)[3] - self.Acceleration >= height - 5:
             c.move(self.ball, 0, -self.Acceleration)
             c.after(1000//60, self.iter_3)
-        elif c.coords(self.ball)[3] <= 600:
+        else:
             c.after(1000//60, self.iter_stop)
 
     def iter_stop(self):
-        if c.coords(self.ball)[3] + self.Acceleration < 600:
+        if c.coords(self.ball)[3] + self.Acceleration < height:
             c.move(self.ball, 0, self.Acceleration)
             c.after(1000//60, self.iter_stop)
 
         else:
-            # Конечная координата частицы равна 601
-            c.move(self.ball, 0, 601 -c.coords(self.ball)[3])
+            # Конечная координата частицы равна height + 1
+            c.move(self.ball, 0, height + 1 - c.coords(self.ball)[3])
+
 
 def esc(event):
     root.destroy()
+
 
 root.bind('<Escape>', esc)
 
