@@ -28,11 +28,12 @@ class Ball:
 
         # Формула лобового сопротивления
         # v - скорость, F_str = лобовое сопротивление, mass - масса, Acceleration - ускорение
-        self.v = 3
-        self.F_str = 0.47 * self.v**2 * radius
+        self.v = 4
+        self.F_str = 0.015 * self.v * radius
+        # print(self.F_str)
         self.mass = mass
-        self.up_coeff = 0.05
-        self.Acceleration = self.F_str / mass
+        self.Acceleration = (self.F_str / mass) * 50
+        print(self.Acceleration)
         self.ball = c.create_oval(self.x1 - self.radius, self.y1 - self.radius, self.x2 +
                                   self.radius, self.y2 + self.radius, fill=color, outline='white', width=2)
     # Функции движения
@@ -42,16 +43,15 @@ class Ball:
         if c.coords(self.ball)[3] < height//2:
             c.move(self.ball, 0, self.v)
             c.after(1000//60, self.move_ball)
-        # self.F_str*0.1 чтобы было наглядно
-        elif height//2 <= c.coords(self.ball)[3] + self.F_str*0.1 < height:
-            c.move(self.ball, 0, self.F_str*0.1)
+        elif height//2 <= c.coords(self.ball)[3] + self.F_str < height:
+            c.move(self.ball, 0, self.F_str)
             c.after(1000//60, self.move_ball)
         else:
             c.move(self.ball, 0, height + 1 - c.coords(self.ball)[3])
             c.after(1000//60, self.iter_1)
 
     def iter_1(self):
-        if c.coords(self.ball)[3] - self.Acceleration >= height - 15:
+        if c.coords(self.ball)[3] - self.Acceleration >= height - self.mass*0.2:
             c.move(self.ball, 0, -self.Acceleration)
             c.after(1000//60, self.iter_1)
         elif c.coords(self.ball)[3] <= height:
@@ -66,7 +66,7 @@ class Ball:
             c.after(1000//60, self.iter_3)
 
     def iter_3(self):
-        if c.coords(self.ball)[3] - self.Acceleration >= height - 5:
+        if c.coords(self.ball)[3] - self.Acceleration >= height - self.mass*0.1:
             c.move(self.ball, 0, -self.Acceleration)
             c.after(1000//60, self.iter_3)
         else:
@@ -91,34 +91,34 @@ root.bind('<Escape>', esc)
 
 # Создание частиц
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-r1 = 20
-mass1 = 25
-ball1 = Ball(c, 100, 120, 100,
-             120, r1, mass1, color="#a0a0a0")
+r1 = 40
+mass1 = 80
+ball1 = Ball(c, 100, 20, 100,
+             20, r1, mass1, color="#a0a0a0")
 ball1.move_ball()
 
-r2 = 30
-mass2 = 35
-ball2 = Ball(c, 200, 120, 200,
-             120, r2, mass2, color="#a0a0a0")
+r2 = 25
+mass2 = 50
+ball2 = Ball(c, 200, 20, 200,
+             20, r2, mass2, color="#a0a0a0")
 ball2.move_ball()
 
-r3 = 10
-mass3 = 15
-ball2 = Ball(c, 300, 120, 300,
-             120, r3, mass3, color="#a0a0a0")
+r3 = 20
+mass3 = 40
+ball2 = Ball(c, 300, 20, 300,
+             20, r3, mass3, color="#a0a0a0")
 ball2.move_ball()
 
 r4 = 36
-mass4 = 20
-ball2 = Ball(c, 400, 120, 400,
-             120, r4, mass4, color="#a0a0a0")
+mass4 = 75
+ball2 = Ball(c, 400, 20, 400,
+             20, r4, mass4, color="#a0a0a0")
 ball2.move_ball()
 
 r5 = 15
-mass5 = 14
-ball2 = Ball(c, 530, 120, 530,
-             120, r5, mass5, color="#a0a0a0")
+mass5 = 10
+ball2 = Ball(c, 530, 20, 530,
+             20, r5, mass5, color="#a0a0a0")
 ball2.move_ball()
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
