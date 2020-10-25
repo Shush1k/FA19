@@ -15,58 +15,64 @@ c.pack()
 c.create_rectangle(0, height//2, width+2, height+2, fill='grey')
 
 class Ball:
-    def __init__(self, c, x1, y1, x2, y2, radius, color="white"):
+
+    def __init__(self, c, x1, y1, x2, y2, radius, mass, color="white"):
+
         self.x1 = x1
         self.y1 = y1
         self.x2 = x2
         self.y2 = y2
         self.radius = radius
         self.c = c
-        # resistance можно придумать что-нибудь интереснее
-        self.resistance = radius*0.2
-        self.ball = c.create_oval(self.x1, self.y1, self.x2, self.y2, fill=color, outline='white', width=2)
+
+        # Формула лобового сопротивления
+        # v - скорость, F_str = лобовое сопротивление, mass - масса, Acceleration - ускорение
+        self.v = 3
+        self.F_str = 0.47 * self.v**2 * radius
+        self.mass = mass
+        self.Acceleration = self.F_str / mass
+        self.ball = c.create_oval(self.x1 - self.radius, self.y1 - self.radius, self.x2 +
+                                  self.radius, self.y2 + self.radius, fill=color, outline='white', width=2)
 
     def move_ball(self):
-        # Отпринтовка координат шара
-        # print(c.coords(self.ball)[3])
-        
         if c.coords(self.ball)[3] < 300:
-            c.move(self.ball, 0, 9)
+            c.move(self.ball, 0, self.v)
             c.after(1000//60, self.move_ball)
         elif 300 <= c.coords(self.ball)[3] < 600:
-            c.move(self.ball, 0, self.resistance)
+            c.move(self.ball, 0, self.F_str*0.1)
             c.after(1000//60, self.move_ball)
         elif c.coords(self.ball)[3] >= 600:
             c.after(1000//60, self.iter_1)
 
-        #TODO создать подъем частицы на высоту, зависящую от массы!!!
-        #Добавьте учёт инерции частиц в зависимости от их массы.
     def iter_1(self):
         if c.coords(self.ball)[3] >= 585:
-            c.move(self.ball, 0, -self.resistance)
+            c.move(self.ball, 0, -self.Acceleration)
             c.after(1000//60, self.iter_1)
         elif c.coords(self.ball)[3] <= 600:
             c.after(1000//60, self.iter_2)
+
     def iter_2(self):
         if c.coords(self.ball)[3] < 600:
-            c.move(self.ball, 0, 0.4*self.resistance)
+            c.move(self.ball, 0, self.Acceleration)
             c.after(1000//60, self.iter_2)
         else:
             c.after(1000//60, self.iter_3)
 
     def iter_3(self):
         if c.coords(self.ball)[3] >= 595:
-            c.move(self.ball, 0, 0.2*-self.resistance)
+            c.move(self.ball, 0, -self.Acceleration)
             c.after(1000//60, self.iter_3)
         elif c.coords(self.ball)[3] <= 600:
             c.after(1000//60, self.iter_stop)
 
     def iter_stop(self):
-        if c.coords(self.ball)[3] <= 600:
-            c.move(self.ball, 0, 0.5)
+        if c.coords(self.ball)[3] + self.Acceleration < 600:
+            c.move(self.ball, 0, self.Acceleration)
             c.after(1000//60, self.iter_stop)
-        
 
+        else:
+            # Конечная координата частицы равна 601
+            c.move(self.ball, 0, 601 -c.coords(self.ball)[3])
 
 def esc(event):
     root.destroy()
@@ -74,26 +80,36 @@ def esc(event):
 root.bind('<Escape>', esc)
 
 
-# Создание мячей 
+# Создание частиц
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 r1 = 20
-ball1 = Ball(c, 100 - r1, 120 - r1, 100 + r1, 120 + r1, r1, color="#a0a0a0")
+mass1 = 25
+ball1 = Ball(c, 100, 120, 100,
+             120, r1, mass1, color="#a0a0a0")
 ball1.move_ball()
 
 r2 = 30
-ball2 = Ball(c, 200 - r2, 120 - r2, 200 + r2, 120 + r2, r2, color="#a0a0a0")
+mass2 = 35
+ball2 = Ball(c, 200, 120, 200,
+             120, r2, mass2, color="#a0a0a0")
 ball2.move_ball()
 
 r3 = 10
-ball2 = Ball(c, 300 - r3, 120 - r3, 300 + r3, 120 + r3, r3, color="#a0a0a0")
+mass3 = 15
+ball2 = Ball(c, 300, 120, 300,
+             120, r3, mass3, color="#a0a0a0")
 ball2.move_ball()
 
-r4 = 35
-ball2 = Ball(c, 400 - r4, 120 - r4, 400 + r4, 120 + r4, r4, color="#a0a0a0")
+r4 = 36
+mass4 = 20
+ball2 = Ball(c, 400, 120, 400,
+             120, r4, mass4, color="#a0a0a0")
 ball2.move_ball()
 
-r4 = 15
-ball2 = Ball(c, 530 - r4, 120 - r4, 530 + r4, 120 + r4, r4, color="#a0a0a0")
+r5 = 15
+mass5 = 14
+ball2 = Ball(c, 530, 120, 530,
+             120, r5, mass5, color="#a0a0a0")
 ball2.move_ball()
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
