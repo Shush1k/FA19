@@ -1,0 +1,5 @@
+15 Simonov 95000
+48 Rumyancev 60000
+73 Baranov 300
+24 Ivanov 45000
+31 Kuznecov 45000
