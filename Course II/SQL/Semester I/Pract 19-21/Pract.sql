@@ -1,0 +1,94 @@
+-- ### Упражнение 6.8 
+
+-- Задание 1 
+
+-- A
+SELECT *  
+FROM DEPARTMENTS  
+NATURAL JOIN STUDENTS 
+ORDER BY REGISTRATION_DATE; 
+
+
+-- B
+SELECT *  
+FROM EXAM_RESULTS  
+ORDER BY STUDENT_ID, COURSE_ID; 
+
+ 
+-- C
+SELECT *  
+FROM STUDENT_ATTENDANCES  
+ORDER BY STUDENT_ID; 
+
+ 
+-- D
+SELECT *  
+FROM DEPARTMENTS  
+ORDER BY DEPARTMENT_ID; 
+ 
+
+-- Задание 2 
+(SELECT count(NUMBER_OF_DAYS_OFF) * 100.0) / ((SELECT count(NUMBER_OF_DAYS_OFF)  
+FROM STUDENT_ATTENDANCES) + (SELECT count(NUMBER_OF_WORKING_DAYS) FROM STUDENT_ATTENDANCES))) || ' %'  
+AS perc 
+FROM STUDENT_ATTENDANCES ORDER BY perc; 
+ 
+
+-- Задание 3 
+SELECT STUDENT_ID  
+FROM (SELECT * FROM EXAM_RESULTS ORDER BY GRADE)  
+WHERE ROWNUM <= 5; 
+ 
+
+-- Задание 4 
+SELECT *  
+FROM PARENTS_INFORMATION 
+ORDER BY ID; 
+ 
+
+-- ### Упражнение 6.9 
+ 
+-- Задание 1 
+SELECT COURSE_ID, TITLE 
+FROM COURSES; 
+ 
+
+-- Задание 2 (Уже было, другой способ решения) 
+SELECT *  
+FROM COURSES  
+WHERE SEATED LIKE '%-03-%' OR  
+SEATED LIKE '%-04-%' OR  
+SEATED LIKE '%-05-%'; 
+ 
+
+-- Задание 3 
+SELECT *  
+FROM COURSES ab  
+NATURAL JOIN DEPARTMENTS d ON (ab.COURSE_ID = d.DEPARTMENT_ID) 
+NATURAL JOIN STUDENTS s ON (s.STU_ID = ab.COURSE_ID); 
+ 
+
+-- Задание 4 
+SELECT *  
+FROM COURSES ab  
+NATURAL JOIN DEPARTMENTS d ON (ab.COURSE_ID = d.DEPARTMENT_ID) 
+NATURAL JOIN STUDENTS s ON (s.STU_ID = ab.COURSE_ID) 
+WHERE d.DEPARTMENT_ID = 20; 
+ 
+
+-- Задание 5 
+SELECT *  
+FROM EXAM_RESULTS e  
+NATURAL JOIN COURSES ab ON (e.COURSE_ID = ab.COURSE_ID)  
+WHERE GRADE > 10;  
+ 
+
+-- Задание 6 
+SELECT *  
+FROM EXAM_RESULTS; 
+ 
+
+-- Задание 7 
+SELECT *  
+FROM EXAMS CROSS JOIN EXAM_TYPES; 
+-- Ответ: Выведет строки из таблиц EXAMS и EXAM_TYPES по сути перемножив их. Соединив каждую строку из первой таблицы, с каждой строкой из второй страницы. 
