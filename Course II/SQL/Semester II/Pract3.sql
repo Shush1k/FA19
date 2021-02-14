@@ -63,7 +63,7 @@ ORDER BY MONTHS_WORKED;
 Создайте отчет, который отображает следующее сообщение для каждого сотрудника: <employee last name> earns <salary> monthly but wants <3 times salary>. 
 Озаглавьте поле Dream Salaries. 
 */
-SELECT last_name ||' earns '|| salary ||' monthly but wants '|| salary*3 AS "Dream Salaries"  
+SELECT last_name ||' earns '|| salary ||' monthly but wants '|| salary * 3 AS "Dream Salaries"  
 FROM employees; 
 
 /*

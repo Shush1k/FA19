@@ -33,7 +33,7 @@ WHERE city = 'Toronto';
 */
 SELECT emp1.last_name AS "Employee", emp1.employee_id AS "Emp#", emp2.last_name AS "Manager", emp2.manager_id AS "Mgr#" 
 FROM employees emp1  
-JOIN employees emp2 ON emp1.manager_id=emp2.employee_id 
+JOIN employees emp2 ON emp1.manager_id = emp2.employee_id 
 ORDER BY emp2.employee_id; 
 
 /*
@@ -42,7 +42,7 @@ ORDER BY emp2.employee_id;
 */
 SELECT emp1.last_name AS "Employee", emp1.employee_id AS "Emp#", emp2.last_name AS "Manager", emp2.manager_id AS "Mgr#" 
 FROM employees emp1  
-LEFT JOIN employees emp2 ON emp1.manager_id=emp2.employee_id 
+LEFT JOIN employees emp2 ON emp1.manager_id = emp2.employee_id 
 ORDER BY "Emp#"; 
 
 /*
