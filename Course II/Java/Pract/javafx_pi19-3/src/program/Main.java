@@ -23,7 +23,7 @@ public class Main extends Application {
     private ObservableList<Person> personData = FXCollections.observableArrayList();
 
     public Main(){
-        for(int i=0; i<40; i++){
+        for(int i=0; i<10; i++){
             personData.add(new Person("Имя" + i, "Фамилия" + i));
         }
     }
@@ -70,7 +70,7 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
-    public boolean showPersonEditDialog(Person person, String mode){
+    public boolean showPersonEditDialog(Person person){
         try{
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/personEditDialog.fxml"));
@@ -78,7 +78,7 @@ public class Main extends Application {
             AnchorPane page = (AnchorPane) loader.load();
 
             Stage dialogStage = new Stage();
-            dialogStage.setTitle(mode);
+            dialogStage.setTitle("Person info");
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);

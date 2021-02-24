@@ -82,7 +82,7 @@ public class PersonOverviewController {
     @FXML
     private void handleNewPerson() {
         Person newPerson = new Person();
-        boolean okClicked = main.showPersonEditDialog(newPerson,"Add person");
+        boolean okClicked = main.showPersonEditDialog(newPerson);
         if (okClicked) {
             if (main.getPersonData().contains(newPerson)){
                 System.out.println("Person");
@@ -97,7 +97,7 @@ public class PersonOverviewController {
     private void handleEditPerson() {
         Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
         if (selectedPerson != null) {
-            boolean okClicked = main.showPersonEditDialog(selectedPerson,"Edit person");
+            boolean okClicked = main.showPersonEditDialog(selectedPerson);
             if (okClicked) {
                 showPersonsOverviewDetails(selectedPerson);
             }
