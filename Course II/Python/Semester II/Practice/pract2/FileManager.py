@@ -47,7 +47,11 @@ class FileManager:
         if os.path.exists(path):
             print("Папка уже существует")
         else:
-            os.mkdir(str(path))
+            try:
+                os.mkdir(str(path))
+                print("Создана папка", path.split("/")[-1])
+            except FileNotFoundError:
+                print("Указанный путь некорректный")
     
     def deleteDir(self, path):
         """
@@ -58,6 +62,7 @@ class FileManager:
         """
         if os.path.exists(path):
             os.rmdir(str(path))
+            print("Удалена папка", path.split("/")[-1])
         else:
             print("Папки с таким именем не существует")
 
@@ -70,9 +75,14 @@ class FileManager:
         TODO выход на уровень вверх, а также работа в пределах рабочей директории
         """ 
         try:
-            os.chdir(path)
-            self.currDir = self.PATH.joinpath(path)
-            print("Перешли в папку:", self.currDir.name)
+            if path == "..":
+                os.chdir(self.currDir.parent)
+                self.currDir = self.PATH.joinpath(self.currDir.parent)
+                print("Текущий путь:", self.currDir)
+            else:
+                os.chdir(path)
+                self.currDir = self.PATH.joinpath(path)
+                print("Текущий путь:", self.currDir)
         except FileNotFoundError:
             print("Папки с таким именем не существует")
     
@@ -99,7 +109,7 @@ class FileManager:
         @param path - путь к файлу.
         @param text - информация на запись в файл.
         """
-        self.PATH.joinpath(path).write_text("tExt")
+        self.currDir.joinpath(path).write_text("tExt")
 
     def showFile(self, path):
         """
@@ -108,8 +118,10 @@ class FileManager:
         Просмотр содержимого текстового файла.
         @param path - путь к файлу.
         """
-        print(self.PATH.joinpath(path).read_text())
-    
+        if os.path.exists(path):
+            print(self.currDir.joinpath(path).read_text())
+        else:
+            print("Файла с таким именем не существует") 
 
 
     def deleteFile(self, path):
@@ -120,7 +132,7 @@ class FileManager:
         @param path - путь к файлу.
         """
         if os.path.exists(path):
-            os.remove(self.PATH.joinpath(path))
+            os.remove(self.currDir.joinpath(path))
         else:
             print("Файла с таким именем не существует") 
 
@@ -159,17 +171,24 @@ class FileManager:
         @param new_name - новое имя файла.
         """
         if os.path.exists(path):
-            self.PATH.joinpath(path).rename(new_name)
+            self.currDir.joinpath(path).rename(new_name)
         else:
             print("Файла с таким именем не существует")
 
 
 if __name__ == "__main__":
     f = FileManager("Test")
-    # f.createDir("test1/test3")
-    # f.deleteDir("test3")
-    # f.createFile("test2/bbb")
-    # f.renameFile("test1/www", "test2/www")
+    # f.createDir("level1/level2")
+    # f.createDir("test2/test2")
+    # f.deleteDir("test2")
+    # f.changeDir("test1")
+    f.changeDir("..")
+    # f.showFile("test2/www")
+    # f.createFile("test1/bbb")
+    # f.renameFile("test1/bbb", "test2/www")
+    # f.writeFile("test1/www", "Hello, FileManager!")
     # f.moveFile("test2/www", "test1/www")
     # f.deleteFile("www")
+    # 
     # f.copyFile("test1/www", "test2/123") 
+    # f.showFile("test2/123")
