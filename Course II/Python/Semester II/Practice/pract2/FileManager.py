@@ -25,15 +25,17 @@ class FileManager:
     """
     def __init__(self, path):
         """
-        @param self.PATH - абсолютный путь рабочей директории
+        @param self.PATH - рабочая директория
         """
         self.PATH = Path(path).absolute()
+        self.last_dir = self.PATH.name
         
         print("\nПуть к рабочей директории:\n"+str(self.PATH))
         try:
             os.chdir(self.PATH)
         except FileNotFoundError:
             print("Рабочая директория не найдена")
+        # Текущая директория
         self.currDir = self.PATH
 
 
@@ -61,7 +63,7 @@ class FileManager:
         @param path - имя папки.
         """
         if os.path.exists(path):
-            os.rmdir(str(path))
+            shutil.rmtree(str(path))
             print("Удалена папка", path.split("/")[-1])
         else:
             print("Папки с таким именем не существует")
@@ -72,17 +74,21 @@ class FileManager:
 
         Перемещение между папками.
         @param path - путь к папке.
-        TODO выход на уровень вверх, а также работа в пределах рабочей директории
         """ 
         try:
             if path == "..":
-                os.chdir(self.currDir.parent)
-                self.currDir = self.PATH.joinpath(self.currDir.parent)
-                print("Текущий путь:", self.currDir)
+                if self.last_dir in str(self.currDir.parent):
+                    os.chdir(self.currDir.parent)
+                    self.currDir = self.PATH.joinpath(self.currDir.parent)
+                    print("Текущий путь:", self.currDir)
+                else:
+                    print("Выход за пределы рабочей директории невозможен!")
+                    
             else:
                 os.chdir(path)
                 self.currDir = self.PATH.joinpath(path)
                 print("Текущий путь:", self.currDir)
+            
         except FileNotFoundError:
             print("Папки с таким именем не существует")
     
@@ -109,7 +115,10 @@ class FileManager:
         @param path - путь к файлу.
         @param text - информация на запись в файл.
         """
-        self.currDir.joinpath(path).write_text("tExt")
+        try:
+            self.currDir.joinpath(path).write_text(text)
+        except FileNotFoundError:
+            print("Файл не найден")
 
     def showFile(self, path):
         """
@@ -170,25 +179,33 @@ class FileManager:
         @param path - путь к файлу.
         @param new_name - новое имя файла.
         """
-        if os.path.exists(path):
-            self.currDir.joinpath(path).rename(new_name)
-        else:
-            print("Файла с таким именем не существует")
+        try:
+            if os.path.exists(path):
+                self.currDir.joinpath(path).rename(new_name)
+            else:
+                print("Файла с таким именем не существует")
+        except FileExistsError:
+            print("Файл уже существует")
 
 
 if __name__ == "__main__":
+    # Если запускать, то лучше по частям
     f = FileManager("Test")
-    # f.createDir("level1/level2")
-    # f.createDir("test2/test2")
-    # f.deleteDir("test2")
-    # f.changeDir("test1")
-    f.changeDir("..")
-    # f.showFile("test2/www")
-    # f.createFile("test1/bbb")
-    # f.renameFile("test1/bbb", "test2/www")
+    # первая часть
+    # f.createDir("test1")
+    # f.createDir("test1/guide")
+    # f.createDir("test2")
+    # f.createFile("test2/bbb")
+    # f.renameFile("test2/bbb", "test2/www")
     # f.writeFile("test1/www", "Hello, FileManager!")
-    # f.moveFile("test2/www", "test1/www")
-    # f.deleteFile("www")
-    # 
-    # f.copyFile("test1/www", "test2/123") 
-    # f.showFile("test2/123")
+    # f.moveFile("test1/www", "test2/www")
+    # f.copyFile("test2/www", "test1/www_in_test1") 
+    # f.showFile("test1/www_in_test1")
+    # f.deleteFile("test2/www")
+    # # вторая часть
+    # f.changeDir("test1/guide")
+    # f.changeDir("..")
+    # f.changeDir("..")
+    # f.changeDir("..")
+    # f.deleteDir("test1")
+    # f.deleteDir("test2")
