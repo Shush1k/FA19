@@ -18,7 +18,7 @@ import java.io.IOException;
 
 public class Main extends Application {
     private Stage primaryStage;
-    private BorderPane rootLayout;
+    private AnchorPane rootLayout;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -31,8 +31,8 @@ public class Main extends Application {
     public void initRootLayout() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("views/schedule.fxml"));
-            rootLayout = (BorderPane) loader.load();
+            loader.setLocation(Main.class.getResource("views/aboutPage.fxml"));
+            rootLayout = (AnchorPane) loader.load();
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
@@ -45,10 +45,10 @@ public class Main extends Application {
     public void showSchedule(){
         try{
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("views/flightInfo.fxml"));
-            AnchorPane personOverview = (AnchorPane) loader.load();
+            loader.setLocation(Main.class.getResource("views/airlineInfo.fxml"));
+            BorderPane personOverview = (BorderPane) loader.load();
 
-            rootLayout.setCenter(personOverview);
+//            rootLayout.setCenter(personOverview);
 
             flightController controller = loader.getController();
 //            controller.setMain(this);
