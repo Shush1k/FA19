@@ -29,6 +29,8 @@ public class RegistrationPageController {
     private TextField numberField;
     @FXML
     private TextField emailField;
+    @FXML
+    private TextField phoneField;
 
     private boolean okClicked = false;
     private Stage stage;
@@ -37,18 +39,24 @@ public class RegistrationPageController {
 
     @FXML
     public void initialize(){
+        loginField.setText(null);
         firstNameField.setText(null);
         lastNameField.setText(null);
-        loginField.setText(null);
-        passwordField.setText(null);
-        passwordRepeatField.setText(null);
-        sexField.setText(null);
         birthdayField.setValue(null);
+        sexField.setText(null);
         seriesField.setText(null);
         numberField.setText(null);
         emailField.setText(null);
+        phoneField.setText(null);
+        passwordField.setText(null);
+        passwordRepeatField.setText(null);
         person = new Person();
 
     }
+    public boolean isOkClicked(){return okClicked;}
+
+    public void setStage(Stage stage){this.stage = stage;}
+
 
 }
+
