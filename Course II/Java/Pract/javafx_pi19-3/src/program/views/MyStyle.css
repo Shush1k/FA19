@@ -3,16 +3,15 @@
 }
 
 .label {
-    -fx-font-size: 11pt;
+    -fx-font-size: 13pt;
     -fx-font-family: "Chalkboard SE";
-    -fx-text-fill: #c9d1d9;
+    -fx-text-fill: #58a6ff;
     -fx-opacity: 1;
 }
 
-
 .label-bright {
     -fx-font-size: 13pt;
-    -fx-font-family: "Chalkboard SE";
+    -fx-font-family: "Luminari";
     -fx-text-fill: white;
     -fx-opacity: 1;
 }
@@ -23,7 +22,10 @@
     -fx-text-fill: #58a6ff;
     -fx-opacity: 1;
 }
-
+.text-field {
+    -fx-fill: 11pt;
+    -fx-font-family: "Chalkboard SE";
+}
 .table-view {
     -fx-base: #0d1117;
     -fx-background-color: #0d1117;
@@ -36,7 +38,7 @@
 }
 
 .table-view .column-header, .table-view .filler {
-    -fx-size: 15;
+    -fx-size: 14;
     -fx-border-width: 0 0 1 0;
     -fx-background-color: transparent;
     -fx-border-color:
@@ -48,12 +50,16 @@
 }
 
 .table-view .column-header .label {
-    -fx-font-size: 12pt;
+    -fx-font-size: 14pt;
     -fx-font-family: "Chalkboard SE";
     -fx-text-fill: white;
     -fx-opacity: 1;
 }
-
+.table-view .table-cell{
+    -fx-font-size: 11pt;
+    -fx-text-fill: white;
+    -fx-font-family: "Luminari";
+}
 .table-view:focused .table-row-cell:filled:focused:selected {
     -fx-background-color: -fx-focus-color;
 }
@@ -87,19 +93,18 @@
 }
 
 .button {
-    -fx-padding: 5 22 5 22;
-    -fx-border-color: #e2e2e2;
+    /*-fx-padding: 5 22 5 22;*/
+    -fx-border-color: white;
     -fx-border-width: 2;
-    -fx-background-radius: 0;
-    -fx-background-color: #0d1117;
-    -fx-font-family: "Chalkboard SE", Helvetica, Arial, sans-serif;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-font-family: "Chalkboard SE";
     -fx-font-size: 11pt;
-    -fx-text-fill: #d8d8d8;
-    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2; /*не знаю как, но оно сделало нормальную накладку внешней границы*/
 }
 
 .button:hover {
-    -fx-background-color: #3a3a3a;
+    -fx-background-color: purple
 }
 
 .button:pressed, .button:default:hover:pressed {
@@ -118,7 +123,13 @@
     -fx-background-color: -fx-focus-color;
     -fx-text-fill: white;
 }
-
+.button:cancel {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+.button:cancel:hover {
+    -fx-background-color: derive(dodgerblue,30%);
+}
 .button:default:hover {
     -fx-background-color: derive(-fx-focus-color,30%);
 }

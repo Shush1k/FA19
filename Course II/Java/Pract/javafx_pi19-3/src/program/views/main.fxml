@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 
 <AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controllers.PersonOverviewController">
     <children>
@@ -56,8 +65,8 @@
                         </GridPane>
                         <HBox layoutX="237.0" layoutY="258.0" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#handleNewPerson" text="New" textFill="#0b68bf" />
-                                <Button mnemonicParsing="false" onAction="#handleEditPerson" text="Edit" />
+                                <Button mnemonicParsing="false" onAction="#handleNewPerson" prefHeight="38.0" prefWidth="72.0" text="New" textFill="#0b68bf" />
+                                <Button mnemonicParsing="false" onAction="#handleEditPerson" prefHeight="38.0" prefWidth="63.0" text="Edit" />
                                 <Button mnemonicParsing="false" onAction="#handleDeletePerson" text="Delete" />
                             </children>
                         </HBox>

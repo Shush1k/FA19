@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="304.0" prefWidth="326.0" styleClass="background" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controllers.PersonEditingDialog">
     <children>
@@ -19,7 +26,10 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Label fx:id="FirstNameLabel" text="First Name" />
+                <Label fx:id="FirstNameLabel" text="First Name" textFill="#58a6ff">
+               <font>
+                  <Font name="Chalkboard SE Light" size="13.0" />
+               </font></Label>
                 <Label text="Last Name" GridPane.rowIndex="1" />
                 <Label text="Street" GridPane.rowIndex="2" />
                 <Label text="City" GridPane.rowIndex="3" />
@@ -33,10 +43,10 @@
                 <TextField fx:id="birthdayField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             </children>
         </GridPane>
-        <HBox layoutX="86.0" layoutY="245.0" prefHeight="31.0" prefWidth="198.0" spacing="25.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
+        <HBox layoutX="112.0" layoutY="261.0" prefHeight="31.0" prefWidth="198.0" spacing="25.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="16.0">
             <children>
-                <Button fx:id="OKBtn" defaultButton="true" mnemonicParsing="false" onAction="#handleOkPerson" prefHeight="31.0" prefWidth="113.0" text="OK"/>
-                <Button fx:id="CancelBTN" mnemonicParsing="false" onAction="#handleCancel" prefHeight="31.0" prefWidth="149.0" text="Cancel" />
+                <Button fx:id="OKBtn" defaultButton="true" mnemonicParsing="false" onAction="#handleOkPerson" prefHeight="31.0" prefWidth="113.0" text="OK" textFill="#3a3a3a" />
+                <Button fx:id="CancelBTN" cancelButton="true" mnemonicParsing="false" onAction="#handleCancel" prefHeight="31.0" prefWidth="149.0" text="Cancel" />
             </children>
         </HBox>
     </children>
