@@ -33,30 +33,41 @@ public class RegistrationPageController {
     private TextField phoneField;
 
     private boolean okClicked = false;
-    private Stage stage;
+    private Stage RegistrationStage;
     private Person person;
     private Main main;
 
     @FXML
     public void initialize(){
-        loginField.setText(null);
-        firstNameField.setText(null);
-        lastNameField.setText(null);
-        birthdayField.setValue(null);
-        sexField.setText(null);
-        seriesField.setText(null);
-        numberField.setText(null);
-        emailField.setText(null);
-        phoneField.setText(null);
-        passwordField.setText(null);
-        passwordRepeatField.setText(null);
+        /*Пока задокументируем*/
+//        loginField.setText(null);
+//        firstNameField.setText(null);
+//        lastNameField.setText(null);
+//        birthdayField.setValue(null);
+//        sexField.setText(null);
+//        seriesField.setText(null);
+//        numberField.setText(null);
+//        emailField.setText(null);
+//        phoneField.setText(null);
+//        passwordField.setText(null);
+//        passwordRepeatField.setText(null);
         person = new Person();
 
     }
     public boolean isOkClicked(){return okClicked;}
 
-    public void setStage(Stage stage){this.stage = stage;}
+    public void setRegistrationStage(Stage RegistrationStage){this.RegistrationStage = RegistrationStage;}
 
+    @FXML
+    private void handleCancel(){RegistrationStage.close();}
 
+    @FXML
+    private void handleRegistration(){
+//        TODO действия после нажатия на кнопку Зарегистрироваться
+    }
+
+    public void setMain(Main main) {
+        this.main = main;
+    }
 }
 

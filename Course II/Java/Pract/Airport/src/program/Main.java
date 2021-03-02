@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import program.controllers.*;
 import program.models.Person;
@@ -43,7 +44,7 @@ public class Main extends Application {
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
-//            primaryStage.setResizable(false);
+            primaryStage.setResizable(false);
             RootLayoutController rootLayoutController = loader.getController();
             rootLayoutController.setMain(this);
             primaryStage.show();
@@ -54,13 +55,49 @@ public class Main extends Application {
 
     public void showAuthorizationPage(){
         try{
+            /* Отображение сцены Авторизации
+            * при закрытии окна, возвращает на RootLayout*/
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/authorization.fxml"));
             AnchorPane authorizationPage = (AnchorPane) loader.load();
-            rootLayout.setCenter(authorizationPage);
+            Stage stage = new Stage();
+            stage.setTitle("Авторизация");
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(primaryStage);
+            stage.setResizable(false);
+
+            Scene scene = new Scene(authorizationPage);
+            stage.setScene(scene);
+
             AuthorizationController controller = loader.getController();
+            controller.setAuthorizationStage(stage);
             controller.setMain(this);
+            stage.showAndWait();
         }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+    public void showRegistrationPage() {
+        try {
+            /* Отображение сцены Регистрация
+             * при закрытии окна, возвращает на Авторизацию*/
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("views/registration.fxml"));
+            AnchorPane registrationPage = (AnchorPane) loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Регистрация");
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(primaryStage);
+            stage.setResizable(false);
+
+            Scene scene = new Scene(registrationPage);
+            stage.setScene(scene);
+
+            RegistrationPageController controller = loader.getController();
+            controller.setRegistrationStage(stage);
+            controller.setMain(this);
+            stage.showAndWait();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
