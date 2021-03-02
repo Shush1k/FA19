@@ -53,8 +53,8 @@
         </GridPane>
         <HBox layoutX="107.0" layoutY="538.0" prefHeight="31.0" prefWidth="263.0" spacing="30.0" AnchorPane.bottomAnchor="31.0" AnchorPane.rightAnchor="30.0">
             <children>
-                <Button fx:id="OKBtn" defaultButton="true" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" text="Зарегистрироваться" />
-                <Button fx:id="CancelBTN" mnemonicParsing="false" prefHeight="31.0" prefWidth="79.0" text="Отмена" />
+                <Button fx:id="OKBtn" onAction="#handleRegistration" defaultButton="true" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" text="Зарегистрироваться" />
+                <Button fx:id="CancelBTN" onAction="#handleCancel" mnemonicParsing="false" prefHeight="31.0" prefWidth="79.0" text="Отмена" />
             </children>
         </HBox>
     </children>

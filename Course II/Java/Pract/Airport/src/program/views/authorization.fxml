@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.PasswordField?>
 <AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controllers.AuthorizationController">
     <children>
       <Label fx:id="FirstNameLabel1" layoutX="139.0" layoutY="75.0" text="Авторизация" AnchorPane.leftAnchor="139.0">
@@ -35,7 +36,7 @@
                   <Font size="18.0" />
                </font></Label>
                 <TextField fx:id="loginField" GridPane.columnIndex="1" />
-                <TextField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             </children>
         </GridPane>
       <Button fx:id="signBtn" onAction="#handlerSignInBtn" layoutX="158.0" layoutY="278.0" mnemonicParsing="false" text="Войти">
