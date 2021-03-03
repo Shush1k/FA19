@@ -63,12 +63,13 @@ public class EditPersonController {
     }
 
     public boolean isDelete(){return delete;}
-    //  TODO
+    //  TODO действие обновление информации о персоне
     @FXML
     private void handleUpdate(){}
     @FXML
     private void handleCancel(){editPersonStage.close();}
-    //  TODO
+
+    //  TODO действие удаления аккаунта
     @FXML
     private void handleDeleteAcc(){}
 

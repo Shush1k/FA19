@@ -128,12 +128,12 @@ public class Main extends Application {
 
     public void showEditPersonPage(){
         try {
-            /* Отображение сцены Изменения данных*/
+            /* Отображение сцены Изменение данных*/
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/editPerson.fxml"));
             AnchorPane editPersonPage = (AnchorPane) loader.load();
             Stage stage = new Stage();
-            stage.setTitle("Изменения данных");
+            stage.setTitle("Изменение данных");
             stage.initModality(Modality.WINDOW_MODAL);
             stage.initOwner(primaryStage);
             stage.setResizable(false);
