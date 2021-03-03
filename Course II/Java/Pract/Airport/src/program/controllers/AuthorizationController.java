@@ -41,6 +41,7 @@ public class AuthorizationController {
         * Alert type - showNoValidSignIn */
         if (isValidAuthorization()){
             // TODO Добавить регулярки (на проверку ввода логина и пароля) в utils папку
+            main.showEditPersonPage();
         }
     }
 

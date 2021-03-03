@@ -54,6 +54,10 @@ public class EditPersonController {
         repeatPasswordField.setText(this.person.getRepeatPassword());
     }
 
+    public void setEditPersonStage(Stage editPersonStage) {
+        this.editPersonStage = editPersonStage;
+    }
+
     public Person getPerson() {
         return person;
     }

@@ -102,6 +102,54 @@ public class Main extends Application {
         }
     }
 
+    public void showAboutPage(){
+        try {
+            /* Отображение сцены Автор
+             * при закрытии окна, возвращает на ...*/
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("views/aboutPage.fxml"));
+            AnchorPane aboutPage = (AnchorPane) loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Автор");
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(primaryStage);
+            stage.setResizable(false);
+
+            Scene scene = new Scene(aboutPage);
+            stage.setScene(scene);
+
+            AboutPageController controller = loader.getController();
+            controller.setAboutStage(stage);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showEditPersonPage(){
+        try {
+            /* Отображение сцены Изменения данных*/
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("views/editPerson.fxml"));
+            AnchorPane editPersonPage = (AnchorPane) loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Изменения данных");
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(primaryStage);
+            stage.setResizable(false);
+
+            Scene scene = new Scene(editPersonPage);
+            stage.setScene(scene);
+
+            EditPersonController controller = loader.getController();
+            controller.setEditPersonStage(stage);
+            stage.showAndWait();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+
     public static void main(String[] args) {
         launch(args);
     }

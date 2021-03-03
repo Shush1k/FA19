@@ -9,7 +9,7 @@
             <menus>
                 <Menu mnemonicParsing="false" text="Помощь">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="О программе" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="Об авторе" />
                     </items>
                 </Menu>
             </menus>

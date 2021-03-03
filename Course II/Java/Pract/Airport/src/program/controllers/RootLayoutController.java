@@ -7,7 +7,7 @@ public class RootLayoutController {
     private Main main;
     @FXML
     private void handleAbout(){
-        main.showAuthorizationPage();
+        main.showAboutPage();
     }
 
     public void setMain(Main main) {

@@ -16,7 +16,7 @@ public class AboutPageController {
 
     public HostServices getHostServices(){return  hostServices;}
 
-    public void setStage(Stage stage) { this.stage = stage;}
+    public void setAboutStage(Stage stage) { this.stage = stage;}
 
     public void setHostServices(HostServices hostServices) {
         this.hostServices = hostServices;
@@ -36,6 +36,8 @@ public class AboutPageController {
     public void openGithub(){
         hostServices.showDocument(githubLink.getText());
     }
+
+
     @FXML
     public void handleBackBtn(){
         stage.close();
