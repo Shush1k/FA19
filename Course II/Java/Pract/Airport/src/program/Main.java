@@ -60,19 +60,23 @@ public class Main extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/authorization.fxml"));
             AnchorPane authorizationPage = (AnchorPane) loader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Авторизация");
-            stage.initModality(Modality.WINDOW_MODAL);
-            stage.initOwner(primaryStage);
-            stage.setResizable(false);
 
-            Scene scene = new Scene(authorizationPage);
-            stage.setScene(scene);
+            /*В центре страница авторизации*/
+            rootLayout.setCenter(authorizationPage);
+
+//            Stage stage = new Stage();
+//            stage.setTitle("Авторизация");
+//            stage.initModality(Modality.WINDOW_MODAL);
+//            stage.initOwner(primaryStage);
+//            stage.setResizable(false);
+//
+//            Scene scene = new Scene(authorizationPage);
+//            stage.setScene(scene);
 
             AuthorizationController controller = loader.getController();
-            controller.setAuthorizationStage(stage);
+//            controller.setAuthorizationStage(stage);
             controller.setMain(this);
-            stage.showAndWait();
+//            stage.showAndWait();
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -149,6 +153,73 @@ public class Main extends Application {
         }
     }
 
+    public void showArrivalBoardPage(){
+        try {
+            /* Отображение сцены Табло прилета*/
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("views/arrivalboard.fxml"));
+            BorderPane arrivalBoardPage = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Табло прилета");
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(primaryStage);
+            stage.setResizable(false);
+
+            Scene scene = new Scene(arrivalBoardPage);
+            stage.setScene(scene);
+
+            ArrivalBoardController controller = loader.getController();
+            controller.setArrivalBoardStage(stage);
+            stage.showAndWait();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void showDepartureBoardPage(){
+        try {
+            /* Отображение сцены Табло вылета*/
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("views/departureboard.fxml"));
+            BorderPane departureBoardPage = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Табло вылета");
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(primaryStage);
+            stage.setResizable(false);
+
+            Scene scene = new Scene(departureBoardPage);
+            stage.setScene(scene);
+
+            DepartureBoardController controller = loader.getController();
+            controller.setDepartureBoardStage(stage);
+            stage.showAndWait();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+    public void showAirlineInfoPage(){
+        try {
+            /* Отображение сцены Информация авиакомпаний*/
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("views/airlineInfo.fxml"));
+            BorderPane airlineInfoPage = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Информация авиакомпаний");
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(primaryStage);
+            stage.setResizable(false);
+
+            Scene scene = new Scene(airlineInfoPage);
+            stage.setScene(scene);
+
+            AirlineInfoController controller = loader.getController();
+            controller.setAirlineInfoStage(stage);
+            stage.showAndWait();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 
     public static void main(String[] args) {
         launch(args);

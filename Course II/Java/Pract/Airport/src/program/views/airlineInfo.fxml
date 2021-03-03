@@ -9,9 +9,8 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<!--Пока оставим, как отдельный файл-->
 
-<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controllers.AirlineInfoController">
    <bottom>
             <TableView fx:id="airlineTable" prefHeight="400.0" prefWidth="800.0" BorderPane.alignment="CENTER">
                 <columns>
