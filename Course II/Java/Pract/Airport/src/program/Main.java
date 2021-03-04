@@ -164,7 +164,7 @@ public class Main extends Application {
         try {
             /* Отображение сцены Табло прилета*/
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("views/arrivalboard.fxml"));
+            loader.setLocation(Main.class.getResource("views/arrivalBoard.fxml"));
             BorderPane arrivalBoardPage = (BorderPane) loader.load();
 
             /*В центре страницы Табло прилета*/
@@ -181,7 +181,7 @@ public class Main extends Application {
         try {
             /* Отображение сцены Табло вылета*/
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("views/departureboard.fxml"));
+            loader.setLocation(Main.class.getResource("views/departureBoard.fxml"));
             BorderPane departureBoardPage = (BorderPane) loader.load();
 
             /*В центре страницы Табло вылета*/
