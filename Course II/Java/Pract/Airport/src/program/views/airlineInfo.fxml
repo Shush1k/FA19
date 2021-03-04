@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controllers.AirlineInfoController">
    <bottom>
             <TableView fx:id="airlineTable" prefHeight="400.0" prefWidth="800.0" BorderPane.alignment="CENTER">
@@ -33,7 +32,7 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <TextField layoutX="35.0" layoutY="85.0" prefHeight="42.0" prefWidth="199.0" AnchorPane.leftAnchor="35.0">
+            <TextField layoutX="35.0" layoutY="85.0" prefHeight="42.0" prefWidth="199.0" promptText="Найти авиакомпанию" AnchorPane.leftAnchor="35.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -41,11 +40,6 @@
             <Label layoutX="279.0" layoutY="9.0" text="Авиакомпании" AnchorPane.leftAnchor="279.0" AnchorPane.topAnchor="9.0">
                <font>
                   <Font name="Chalkboard SE Light" size="30.0" />
-               </font>
-            </Label>
-            <Label layoutX="38.0" layoutY="43.0" text="Найти авиакомпанию" AnchorPane.leftAnchor="35.0">
-               <font>
-                  <Font name="Chalkboard SE Light" size="18.0" />
                </font>
             </Label>
          </children>

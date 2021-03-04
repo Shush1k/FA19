@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import program.Main;
 import program.models.Person;
 import program.utils.Alerts;
+import program.utils.Validation;
 
 public class AuthorizationController {
 

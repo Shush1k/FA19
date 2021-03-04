@@ -31,8 +31,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
-//        this.primaryStage.setTitle("Airport");
-//        TODO придумать как связать RootLayout и переход в MainLayout
+        this.primaryStage.setTitle("Airport");
 
         initRootLayout();
         showAuthorizationPage();
@@ -58,7 +57,8 @@ public class Main extends Application {
     }
     public void MainLayout() {
         try {
-//            TODO сделать из этого MainLayout по аналогии с RootLayout Toolbar а внутри 3 окна (прилет, вылет, авиакомпании)
+            /*Панель на которой расположены основные функции программы
+            * по умолчанию запускаем Табло прилетов*/
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/mainLayout.fxml"));
             mainLayout = (BorderPane) loader.load();
@@ -70,7 +70,6 @@ public class Main extends Application {
 
             MainLayoutController mainLayoutController = loader.getController();
             mainLayoutController.setMain(this);
-            /*По умолчанию будем показывать Табло прилетов*/
             mainLayoutController.openArrivalBoard();
             mainStage.show();
         } catch (IOException e){
@@ -126,7 +125,7 @@ public class Main extends Application {
             loader.setLocation(Main.class.getResource("views/aboutPage.fxml"));
             AnchorPane aboutPage = (AnchorPane) loader.load();
             Stage stage = new Stage();
-            stage.setTitle("Автор");
+            stage.setTitle("Shush1k страница");
             stage.initModality(Modality.WINDOW_MODAL);
             stage.initOwner(primaryStage);
             stage.setResizable(false);

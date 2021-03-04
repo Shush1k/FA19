@@ -1,13 +1,11 @@
 package program.controllers;
 
 import javafx.fxml.FXML;
-import javafx.stage.Stage;
 import program.Main;
 
 public class MainLayoutController {
     /*Данный класс контроллер нужен для управлением ToolBar*/
     private Main main;
-//    TODO переход из одной страницы на другую по кнопкам ToolBar
 
     @FXML
     public void openArrivalBoard() {
