@@ -41,7 +41,7 @@ public class AuthorizationController {
         * Alert type - showNoValidSignIn */
         if (isValidAuthorization()){
             // TODO Добавить регулярки (на проверку ввода логина и пароля) в utils папку
-            main.showAirlineInfoPage();
+            main.MainLayout();
         }
     }
 
@@ -70,5 +70,6 @@ public class AuthorizationController {
     }
 
     public void setMain(Main main) { this.main = main; }
+
 
 }

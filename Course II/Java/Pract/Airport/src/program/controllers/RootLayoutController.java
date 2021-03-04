@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import program.Main;
 
 public class RootLayoutController {
+    /*Данный класс контроллер нужен для управлением меню*/
     private Main main;
     @FXML
     private void handleAbout(){

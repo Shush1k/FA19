@@ -19,6 +19,8 @@ import java.io.IOException;
 public class Main extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
+    private Stage mainStage;
+    private BorderPane mainLayout;
     private ObservableList<Person> personData = FXCollections.observableArrayList();
 
     public Main(){}
@@ -28,16 +30,22 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("Airport");
+    public void start(Stage mainStage) throws Exception {
+//        this.primaryStage = primaryStage;
+//        this.primaryStage.setTitle("Airport");
+//        TODO придумать как связать RootLayout и переход в MainLayout
+        this.mainStage = mainStage;
 
-        initRootLayout();
-        showAuthorizationPage();
+
+//        initRootLayout();
+//        showAuthorizationPage();
+
+        MainLayout();
     }
     @FXML
     public void initRootLayout() {
         try {
+            /*Панель меню, вкладка помощь*/
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/rootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
@@ -45,10 +53,29 @@ public class Main extends Application {
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             primaryStage.setResizable(false);
+
             RootLayoutController rootLayoutController = loader.getController();
             rootLayoutController.setMain(this);
             primaryStage.show();
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void MainLayout() {
+        try {
+//            TODO сделать из этого MainLayout по аналогии с RootLayout Toolbar а внутри 3 окна (прилет, вылет, авиакомпании)
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("views/mainLayout.fxml"));
+            mainLayout = (BorderPane) loader.load();
+
+            Scene scene = new Scene(mainLayout);
+            mainStage.setScene(scene);
+            mainStage.setResizable(false);
+
+            MainLayoutController mainLayoutController = loader.getController();
+            mainLayoutController.setMain(this);
+            mainStage.show();
+        } catch (IOException e){
             e.printStackTrace();
         }
     }
@@ -158,19 +185,13 @@ public class Main extends Application {
             /* Отображение сцены Табло прилета*/
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/arrivalboard.fxml"));
-            BorderPane arrivalBoardPage = loader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Табло прилета");
-            stage.initModality(Modality.WINDOW_MODAL);
-            stage.initOwner(primaryStage);
-            stage.setResizable(false);
+            BorderPane arrivalBoardPage = (BorderPane) loader.load();
 
-            Scene scene = new Scene(arrivalBoardPage);
-            stage.setScene(scene);
+            /*В центре страницы Табло прилета*/
+            mainLayout.setCenter(arrivalBoardPage);
 
             ArrivalBoardController controller = loader.getController();
-            controller.setArrivalBoardStage(stage);
-            stage.showAndWait();
+            controller.setMain(this);
         } catch (IOException e){
             e.printStackTrace();
         }
@@ -181,19 +202,13 @@ public class Main extends Application {
             /* Отображение сцены Табло вылета*/
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/departureboard.fxml"));
-            BorderPane departureBoardPage = loader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Табло вылета");
-            stage.initModality(Modality.WINDOW_MODAL);
-            stage.initOwner(primaryStage);
-            stage.setResizable(false);
+            BorderPane departureBoardPage = (BorderPane) loader.load();
 
-            Scene scene = new Scene(departureBoardPage);
-            stage.setScene(scene);
+            /*В центре страницы Табло вылета*/
+            mainLayout.setCenter(departureBoardPage);
 
             DepartureBoardController controller = loader.getController();
-            controller.setDepartureBoardStage(stage);
-            stage.showAndWait();
+            controller.setMain(this);
         } catch (IOException e){
             e.printStackTrace();
         }
@@ -203,19 +218,13 @@ public class Main extends Application {
             /* Отображение сцены Информация авиакомпаний*/
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/airlineInfo.fxml"));
-            BorderPane airlineInfoPage = loader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Информация авиакомпаний");
-            stage.initModality(Modality.WINDOW_MODAL);
-            stage.initOwner(primaryStage);
-            stage.setResizable(false);
+            BorderPane airlineInfoPage = (BorderPane) loader.load();
 
-            Scene scene = new Scene(airlineInfoPage);
-            stage.setScene(scene);
+            /*В центре страницы Информация авиакомпаний*/
+            mainLayout.setCenter(airlineInfoPage);
 
             AirlineInfoController controller = loader.getController();
-            controller.setAirlineInfoStage(stage);
-            stage.showAndWait();
+            controller.setMain(this);
         } catch (IOException e){
             e.printStackTrace();
         }

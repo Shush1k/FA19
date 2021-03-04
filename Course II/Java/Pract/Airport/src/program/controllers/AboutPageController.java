@@ -14,7 +14,7 @@ public class AboutPageController {
     private Stage stage;
     private HostServices hostServices;
 
-    public HostServices getHostServices(){return  hostServices;}
+    public HostServices getHostServices(){return hostServices;}
 
     public void setAboutStage(Stage stage) { this.stage = stage;}
 
