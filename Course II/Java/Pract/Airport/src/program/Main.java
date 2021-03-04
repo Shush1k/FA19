@@ -70,6 +70,8 @@ public class Main extends Application {
 
             MainLayoutController mainLayoutController = loader.getController();
             mainLayoutController.setMain(this);
+            /*По умолчанию будем показывать Табло прилетов*/
+            mainLayoutController.openArrivalBoard();
             mainStage.show();
         } catch (IOException e){
             e.printStackTrace();
@@ -142,22 +144,17 @@ public class Main extends Application {
 
     public void showEditPersonPage(){
         try {
-            /* Отображение сцены Изменение данных*/
+//            TODO Переделать личный кабинет, под шаблон информации о Авиакомпаниях
+            /* Отображение сцены Изменение данных персоны*/
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/editPerson.fxml"));
-            AnchorPane editPersonPage = (AnchorPane) loader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Изменение данных");
-            stage.initModality(Modality.WINDOW_MODAL);
-            stage.initOwner(primaryStage);
-            stage.setResizable(false);
+            AnchorPane editPersonPage = loader.load();
 
-            Scene scene = new Scene(editPersonPage);
-            stage.setScene(scene);
+            /*В центре страницы Изменение данных персоны*/
+            mainLayout.setCenter(editPersonPage);
 
             EditPersonController controller = loader.getController();
-            controller.setEditPersonStage(stage);
-            stage.showAndWait();
+            controller.setMain(this);
         } catch (IOException e){
             e.printStackTrace();
         }

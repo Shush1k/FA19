@@ -21,6 +21,8 @@ public class MainLayoutController {
     public void openAirlineInfo() {
         main.showAirlineInfoPage();
     }
+    @FXML
+    public void openEditPerson(){ main.showEditPersonPage(); }
 
     public void setMain(Main main) {
         this.main = main;

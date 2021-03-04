@@ -13,6 +13,7 @@
             <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="73.0" onAction="#openArrivalBoard" text="Прилеты" />
             <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="64.0" onAction="#openDepartureBoard" text="Вылеты" />
             <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="107.0" onAction="#openAirlineInfo" text="Авиакомпании" />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="120.0" onAction="#openEditPerson" text="Личный Кабинет" />
         </items>
     </ToolBar>
 </top>
