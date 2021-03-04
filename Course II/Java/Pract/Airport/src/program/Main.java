@@ -19,7 +19,6 @@ import java.io.IOException;
 public class Main extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
-    private Stage mainStage;
     private BorderPane mainLayout;
     private ObservableList<Person> personData = FXCollections.observableArrayList();
 
@@ -30,17 +29,13 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage mainStage) throws Exception {
-//        this.primaryStage = primaryStage;
+    public void start(Stage primaryStage) throws Exception {
+        this.primaryStage = primaryStage;
 //        this.primaryStage.setTitle("Airport");
 //        TODO придумать как связать RootLayout и переход в MainLayout
-        this.mainStage = mainStage;
 
-
-//        initRootLayout();
-//        showAuthorizationPage();
-
-        MainLayout();
+        initRootLayout();
+        showAuthorizationPage();
     }
     @FXML
     public void initRootLayout() {
@@ -69,6 +64,7 @@ public class Main extends Application {
             mainLayout = (BorderPane) loader.load();
 
             Scene scene = new Scene(mainLayout);
+            Stage mainStage = new Stage();
             mainStage.setScene(scene);
             mainStage.setResizable(false);
 
@@ -91,27 +87,15 @@ public class Main extends Application {
             /*В центре страница авторизации*/
             rootLayout.setCenter(authorizationPage);
 
-//            Stage stage = new Stage();
-//            stage.setTitle("Авторизация");
-//            stage.initModality(Modality.WINDOW_MODAL);
-//            stage.initOwner(primaryStage);
-//            stage.setResizable(false);
-//
-//            Scene scene = new Scene(authorizationPage);
-//            stage.setScene(scene);
-
             AuthorizationController controller = loader.getController();
-//            controller.setAuthorizationStage(stage);
             controller.setMain(this);
-//            stage.showAndWait();
         }catch (IOException e){
             e.printStackTrace();
         }
     }
     public void showRegistrationPage() {
         try {
-            /* Отображение сцены Регистрация
-             * при закрытии окна, возвращает на Авторизацию*/
+            /* Отображение отдельного окна Регистрация*/
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/registration.fxml"));
             AnchorPane registrationPage = (AnchorPane) loader.load();
@@ -135,8 +119,7 @@ public class Main extends Application {
 
     public void showAboutPage(){
         try {
-            /* Отображение сцены Автор
-             * при закрытии окна, возвращает на ...*/
+            /* Отображение сцены Автор*/
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/aboutPage.fxml"));
             AnchorPane aboutPage = (AnchorPane) loader.load();
