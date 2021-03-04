@@ -144,7 +144,6 @@ public class Main extends Application {
 
     public void showEditPersonPage(){
         try {
-//            TODO Переделать личный кабинет, под шаблон информации о Авиакомпаниях
             /* Отображение сцены Изменение данных персоны*/
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/editPerson.fxml"));
