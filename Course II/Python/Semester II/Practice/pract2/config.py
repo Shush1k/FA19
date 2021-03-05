@@ -1,8 +1,16 @@
 from FileManager import FileManager
+from pathlib import Path
+"""
+Файл настроек
+"""
+MY_PATH = "Home/user"
+FM_PATH = Path(MY_PATH).absolute()
 
-if __name__ == "__main__":
+
+# проверка команд
+# if __name__ == "__main__":
     # Если запускать, то лучше по частям
-    f = FileManager("Test")
+    # f = FileManager("Test")
     # первая часть
     # f.createDir("test1")
     # f.createDir("test1/guide")

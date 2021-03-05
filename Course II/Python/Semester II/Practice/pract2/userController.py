@@ -1,55 +1,73 @@
 from FileManager import FileManager
+from config import FM_PATH
 
 
-f = FileManager("Test")
+f = FileManager(FM_PATH)
 f.info()
 print("\nПуть рабочей директории:", f.getCurrDir())
 print(str("_"*100)+"\n")
 while True:
     choice = input("==> ")
     if choice == "createDir" or choice == "1":
-        dirname = input("Создание папки: ")
+        print("Создание папки")
+        dirname = input("Введите название папки: ")
         f.createDir(dirname)
 
     elif choice == "deleteDir" or choice == "2":
-        dirname = input("Удаление папки: ")
+        print("Удаление папки")
+        dirname = input("Введите название папки: ")
         f.deleteDir(dirname)
 
     elif choice == "changeDir" or choice == "3":
-        dirname = input("Перемещение в папку: ")
+        print("Перемещение в папку")
+        dirname = input("Введите путь к директории: ")
         f.changeDir(dirname)
 
     elif choice == "createFile" or choice == "4":
-        filename = input("Создание файла: ")
+        print("Создание файла")
+        filename = input("Название файла: ")
         f.createFile(filename)
 
     elif choice == "writeFile" or choice == "5":
-        filepath = input("Запись в файл: ")
+        print("Запись в файл")
+        filename = input("Название файла: ")
         text = input("Текст: ")
-        f.writeFile(filepath, text)
+        f.writeFile(filename, text)
 
     elif choice == "showFile" or choice == "6":
-        filename = input("Просмотр файла: ")
+        print("Просмотр файла")
+        filename = input("Название файла: ")
         f.showFile(filename)
 
     elif choice == "deleteFile" or choice == "7":
-        filename = input("Удалить файл: ")
+        print("Удалить файл")
+        filename = input("Название файла: ")
         f.deleteFile(filename)
 
     elif choice == "copyFile" or choice == "8":
-        currpath = input("Скопировать файл: ")
+        print("Скопировать файл")
+        currpath = input("Название файла: ")
         newpath = input("Скопировать в: ")
         f.copyFile(currpath, newpath)
 
     elif choice == "moveFile" or choice == "9":
-        currpath = input("Переместить файл: ")
+        print("Переместить файл")
+        currpath = input("Название файла: ")
         newpath = input("Переместить в: ")
         f.moveFile(currpath, newpath)
 
     elif choice == "renameFile" or choice == "10":
-        filepath = input("Переименовать файл: ")
+        print("Переименовать файл")
+        filepath = input("Название файла: ")
         newname = input("Переименовать в: ")
         f.renameFile(filepath, newname)
+
+    elif choice == "tree" or choice == "11":
+        print("Дерево директорий:")
+        f.showTree(f.currDir)
+
+    elif choice == "showCD" or choice == "12":
+        print("Текущий путь:", f.getCurrDir())
 
     elif choice == "info" or choice == "help" or choice == "?":
         f.info()

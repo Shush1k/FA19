@@ -162,6 +162,8 @@ class FileManager:
             if os.path.exists(path):
                 os.remove(self.currDir.joinpath(path))
                 print(f"Файл {path} удален!")
+            else:
+                print("Файла с таким именем не существует")
         except OSError:
             print("Файла с таким именем не существует") 
 
@@ -177,6 +179,8 @@ class FileManager:
             if os.path.exists(curr_path):
                 shutil.copy2(curr_path, new_path)
                 print(f"Файл скопирован в {new_path}")
+            else:
+                print("Файла с таким именем не существует")
         except OSError:
             print("Файла с таким именем не существует") 
 
@@ -192,8 +196,10 @@ class FileManager:
             if os.path.exists(curr_path):
                 os.replace(curr_path, new_path)
                 print(f"Файл перемещен из {curr_path} в {new_path}")
+            else:
+                print("Файла с таким именем не существует")
         except OSError:
-            print("Файла с таким именем не существует") 
+            pass
 
 
     def renameFile(self, path, new_name):
@@ -208,10 +214,22 @@ class FileManager:
             if os.path.exists(path):
                 self.currDir.joinpath(path).rename(new_name)
                 print(f"Файл переименован в {new_name}")
+            else:
+                print("Файла с таким именем не существует")
         except FileExistsError:
             print("Файл уже существует")
         except OSError:
             print("Файла с таким именем не существует") 
+
+    def showTree(self, path):
+        """
+        Показ структуры папки
+        """
+        tree = os.walk(path)
+        for i in tree:
+            print(i[0])
+
+
 
     def info(self):
         """
@@ -230,5 +248,8 @@ class FileManager:
         print("8.   copyFile    Копирование файлов из одной папку в другую")
         print("9.   moveFile    Перемещение файлов")
         print("10.  renameFile  Переименовывание файлов")
-        print("11.  info        Справка")
+        print("11.  tree        Показать дерево директорий")
+        print("12.  showCD      Узнать текущую директорию")
+        print("13.  info        Справка")
+
         print(str("=-" * 30)+"=")
