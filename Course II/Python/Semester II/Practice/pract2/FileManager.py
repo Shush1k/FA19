@@ -46,14 +46,16 @@ class FileManager:
         Создание папки по имени.
         @param path - имя папки.
         """
-        if os.path.exists(path):
-            print("Папка уже существует")
-        else:
-            try:
-                os.mkdir(str(path))
+        try:
+            if os.path.exists(path):
+                print("Папка уже существует")
+            else:
+                os.makedirs(str(path))
                 print("Создана папка", path.split("/")[-1])
-            except FileNotFoundError:
-                print("Указанный путь некорректный")
+        except FileNotFoundError:
+            print("Указанный путь некорректный")
+        except OSError:
+            pass
     
     def deleteDir(self, path):
         """
@@ -62,11 +64,18 @@ class FileManager:
         Удаление папки по имени.
         @param path - имя папки.
         """
-        if os.path.exists(path):
-            shutil.rmtree(str(path))
-            print("Удалена папка", path.split("/")[-1])
+        # try:
+        if os.path.isdir(path):
+            shutil.rmtree(str(path), ignore_errors=True)
+            if str(path) == ".":
+                print("Содержимое текущей папки удалено")
+            else:
+                print("Удалена папка", path.split("/")[-1])
         else:
             print("Папки с таким именем не существует")
+        # except PermissionError:
+        #     pass
+            
 
     def changeDir(self, path):
         """
@@ -91,6 +100,8 @@ class FileManager:
                     print("Текущий путь:", self.currDir)
         except FileNotFoundError:
             print("Папки с таким именем не существует")
+        except OSError:
+            pass
     
     def createFile(self, path):
         """
@@ -106,6 +117,8 @@ class FileManager:
                 open(path, "w", encoding="utf-8").close()
         except FileNotFoundError:
             print("\nПуть к файлу не найден")
+        except OSError:
+            pass
 
     def writeFile(self, path, text):
         """
@@ -117,8 +130,11 @@ class FileManager:
         """
         try:
             self.currDir.joinpath(path).write_text(text)
+            print(f"Создан файл: {path}\nСодержимое файла: {text}")
         except FileNotFoundError:
             print("Файл не найден")
+        except OSError:
+            pass
 
     def showFile(self, path):
         """
@@ -127,11 +143,13 @@ class FileManager:
         Просмотр содержимого текстового файла.
         @param path - путь к файлу.
         """
-        if os.path.exists(path):
-            print(self.currDir.joinpath(path).read_text())
-        else:
-            print("Файла с таким именем не существует") 
-
+        try:
+            if os.path.exists(path):
+                print("=="*10 +"\n"+ str(self.currDir.joinpath(path).read_text()) +"\n"+ "=="*10)
+            else:
+                print("Файла с таким именем не существует") 
+        except OSError:
+            pass
 
     def deleteFile(self, path):
         """
@@ -140,9 +158,11 @@ class FileManager:
         Удаление файла по имени.
         @param path - путь к файлу.
         """
-        if os.path.exists(path):
-            os.remove(self.currDir.joinpath(path))
-        else:
+        try:
+            if os.path.exists(path):
+                os.remove(self.currDir.joinpath(path))
+                print(f"Файл {path} удален!")
+        except OSError:
             print("Файла с таким именем не существует") 
 
     def copyFile(self, curr_path, new_path):
@@ -153,14 +173,12 @@ class FileManager:
         @param curr_path - путь откуда копируем
         @param new_path - путь куда копируем
         """
-        if curr_path != "." or new_path != ".":
-            try:
-                if os.path.exists(curr_path):
-                    shutil.copy2(curr_path, new_path)
-                else:
-                    print("Файла с таким именем не существует") 
-            except PermissionError:
-                print("Нет доступа к файлу!")
+        try:
+            if os.path.exists(curr_path):
+                shutil.copy2(curr_path, new_path)
+                print(f"Файл скопирован в {new_path}")
+        except OSError:
+            print("Файла с таким именем не существует") 
 
     def moveFile(self, curr_path, new_path):
         """
@@ -170,14 +188,13 @@ class FileManager:
         @param curr_path - текущее расположение файла
         @param new_path - новое место файла
         """
-        if curr_path != "." or new_path != ".":
-            try:
-                if os.path.exists(curr_path):
-                    os.replace(curr_path, new_path)
-                else:
-                    print("Файла с таким именем не существует") 
-            except PermissionError:
-                print("Нет доступа к файлу!")
+        try:
+            if os.path.exists(curr_path):
+                os.replace(curr_path, new_path)
+                print(f"Файл перемещен из {curr_path} в {new_path}")
+        except OSError:
+            print("Файла с таким именем не существует") 
+
 
     def renameFile(self, path, new_name):
         """
@@ -190,12 +207,11 @@ class FileManager:
         try:
             if os.path.exists(path):
                 self.currDir.joinpath(path).rename(new_name)
-            else:
-                print("Файла с таким именем не существует")
+                print(f"Файл переименован в {new_name}")
         except FileExistsError:
             print("Файл уже существует")
-        except PermissionError:
-            print("Нет доступа к файлу!")
+        except OSError:
+            print("Файла с таким именем не существует") 
 
     def info(self):
         """

@@ -3,8 +3,6 @@ from FileManager import FileManager
 
 f = FileManager("Test")
 f.info()
-
-
 print("\nПуть рабочей директории:", f.getCurrDir())
 print(str("_"*100)+"\n")
 while True:
@@ -40,17 +38,17 @@ while True:
 
     elif choice == "copyFile" or choice == "8":
         currpath = input("Скопировать файл: ")
-        newpath = input("В: ")
+        newpath = input("Скопировать в: ")
         f.copyFile(currpath, newpath)
 
     elif choice == "moveFile" or choice == "9":
         currpath = input("Переместить файл: ")
-        newpath = input("В: ")
+        newpath = input("Переместить в: ")
         f.moveFile(currpath, newpath)
 
     elif choice == "renameFile" or choice == "10":
         filepath = input("Переименовать файл: ")
-        newname = input("Назвать: ")
+        newname = input("Переименовать в: ")
         f.renameFile(filepath, newname)
 
     elif choice == "info" or choice == "help" or choice == "?":
