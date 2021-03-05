@@ -29,8 +29,6 @@ class FileManager:
         """
         self.PATH = Path(path).absolute()
         self.last_dir = self.PATH.name
-        
-        print("\nПуть к рабочей директории:\n"+str(self.PATH))
         try:
             os.chdir(self.PATH)
         except FileNotFoundError:
@@ -38,6 +36,8 @@ class FileManager:
         # Текущая директория
         self.currDir = self.PATH
 
+    def getCurrDir(self):
+        return self.currDir
 
     def createDir(self, path):
         """
@@ -76,19 +76,19 @@ class FileManager:
         @param path - путь к папке.
         """ 
         try:
-            if path == "..":
-                if self.last_dir in str(self.currDir.parent):
-                    os.chdir(self.currDir.parent)
-                    self.currDir = self.PATH.joinpath(self.currDir.parent)
-                    print("Текущий путь:", self.currDir)
+            if len(path) != 0:
+                if path == "..":
+                    if self.last_dir in str(self.currDir.parent):
+                        os.chdir(self.currDir.parent)
+                        self.currDir = self.PATH.joinpath(self.currDir.parent)
+                        print("Текущий путь:", self.currDir)
+                    else:
+                        print("Выход за пределы рабочей директории невозможен!")
+                        
                 else:
-                    print("Выход за пределы рабочей директории невозможен!")
-                    
-            else:
-                os.chdir(path)
-                self.currDir = self.PATH.joinpath(path)
-                print("Текущий путь:", self.currDir)
-            
+                    os.chdir(path)
+                    self.currDir = self.PATH.joinpath(path)
+                    print("Текущий путь:", self.currDir)
         except FileNotFoundError:
             print("Папки с таким именем не существует")
     
@@ -153,10 +153,14 @@ class FileManager:
         @param curr_path - путь откуда копируем
         @param new_path - путь куда копируем
         """
-        if os.path.exists(curr_path):
-            shutil.copy2(curr_path, new_path)
-        else:
-            print("Файла с таким именем не существует") 
+        if curr_path != "." or new_path != ".":
+            try:
+                if os.path.exists(curr_path):
+                    shutil.copy2(curr_path, new_path)
+                else:
+                    print("Файла с таким именем не существует") 
+            except PermissionError:
+                print("Нет доступа к файлу!")
 
     def moveFile(self, curr_path, new_path):
         """
@@ -166,10 +170,14 @@ class FileManager:
         @param curr_path - текущее расположение файла
         @param new_path - новое место файла
         """
-        if os.path.exists(curr_path):
-            os.replace(curr_path, new_path)
-        else:
-            print("Файла с таким именем не существует") 
+        if curr_path != "." or new_path != ".":
+            try:
+                if os.path.exists(curr_path):
+                    os.replace(curr_path, new_path)
+                else:
+                    print("Файла с таким именем не существует") 
+            except PermissionError:
+                print("Нет доступа к файлу!")
 
     def renameFile(self, path, new_name):
         """
@@ -186,3 +194,25 @@ class FileManager:
                 print("Файла с таким именем не существует")
         except FileExistsError:
             print("Файл уже существует")
+        except PermissionError:
+            print("Нет доступа к файлу!")
+
+    def info(self):
+        """
+        Справка по командам FileManager
+        """
+        print(str("=-" * 30)+"=")
+        print("                     FileManager Menu\n")
+        print("0.   exit        Выход из FileManager")
+        print("1.   createDir   Создание папки(с указанием имени)")
+        print("2.   deleteDir   Удаление папки по имени")
+        print("3.   changeDir   Перемещение между папками")
+        print("4.   createFile  Создание пустых файлов с указаным именем")
+        print("5.   writeFile   Запись текста в файл")
+        print("6.   showFile    Просмотр содержимого текстового файла")
+        print("7.   deleteFile  Удаление файлов по имени")
+        print("8.   copyFile    Копирование файлов из одной папку в другую")
+        print("9.   moveFile    Перемещение файлов")
+        print("10.  renameFile  Переименовывание файлов")
+        print("11.  info        Справка")
+        print(str("=-" * 30)+"=")
