@@ -29,6 +29,8 @@ class FileManager:
         """
         self.PATH = Path(path).absolute()
         self.last_dir = self.PATH.name
+
+        print(self.last_dir)
         try:
             os.chdir(self.PATH)
         except FileNotFoundError:
