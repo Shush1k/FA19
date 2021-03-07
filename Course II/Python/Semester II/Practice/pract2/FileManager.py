@@ -3,19 +3,6 @@ import shutil
 from pathlib import Path
 
 
-
-#TODO:
-# 1 Создание папки(с указанием имени)(mkdir) DONE
-# 2 Удаление папки по имени (rm) DONE
-# 3 Перемещение между папками (в пределах рабочей папки) - заход в папку по имени, выход на уровень вверх (cd) TODO
-# 4 создание пустых файлов с указаным именем (touch) DONE
-# 5 запись текста в файл DONE
-# 6 просмотр содержимого текстового файла (cat) DONE
-# 7 удаление файлов по имени (rm -r) DONE
-# 8 копирование файлов из одной папку в другую (cp) DONE
-# 9 перемещение файлов (mv) DONE
-# 10 переименовывание файлов DONE
-
 class FileManager:
     """
     Необходимо создать примитивный файловый менеджер. Программа должна работать в определенной папке (рабочей
@@ -23,6 +10,7 @@ class FileManager:
 
     @param path - путь к рабочей директории
     """
+
     def __init__(self, path):
         """
         @param self.PATH - рабочая директория
@@ -55,8 +43,8 @@ class FileManager:
         except FileNotFoundError:
             print("Указанный путь некорректный")
         except OSError:
-            pass
-    
+            print("Некорректное использование")
+
     def deleteDir(self, path):
         """
         Задание 2 
@@ -64,18 +52,17 @@ class FileManager:
         Удаление папки по имени.
         @param path - имя папки.
         """
-        # try:
-        if os.path.isdir(path):
-            shutil.rmtree(str(path), ignore_errors=True)
-            if str(path) == ".":
-                print("Содержимое текущей папки удалено")
+        try:
+            if os.path.isdir(path):
+                shutil.rmtree(str(path), ignore_errors=True)
+                if str(path) == ".":
+                    print("Содержимое текущей папки удалено")
+                else:
+                    print("Удалена папка", path.split("/")[-1])
             else:
-                print("Удалена папка", path.split("/")[-1])
-        else:
+                print("Папки с таким именем не существует")
+        except OSError:
             print("Папки с таким именем не существует")
-        # except PermissionError:
-        #     pass
-            
 
     def changeDir(self, path):
         """
@@ -83,7 +70,7 @@ class FileManager:
 
         Перемещение между папками.
         @param path - путь к папке.
-        """ 
+        """
         try:
             if len(path) != 0:
                 if path == "..":
@@ -93,7 +80,6 @@ class FileManager:
                         print("Текущий путь:", self.currDir)
                     else:
                         print("Выход за пределы рабочей директории невозможен!")
-                        
                 else:
                     os.chdir(path)
                     self.currDir = self.PATH.joinpath(path)
@@ -101,8 +87,8 @@ class FileManager:
         except FileNotFoundError:
             print("Папки с таким именем не существует")
         except OSError:
-            pass
-    
+            print("Некорректное использование")
+
     def createFile(self, path):
         """
         Задание 4 
@@ -118,12 +104,12 @@ class FileManager:
         except FileNotFoundError:
             print("\nПуть к файлу не найден")
         except OSError:
-            pass
+            print("Некорректное использование")
 
     def writeFile(self, path, text):
         """
         Задание 5 
-        
+
         Запись в текстовый файл.
         @param path - путь к файлу.
         @param text - информация на запись в файл.
@@ -134,7 +120,7 @@ class FileManager:
         except FileNotFoundError:
             print("Файл не найден")
         except OSError:
-            pass
+            print("Некорректное использование")
 
     def showFile(self, path):
         """
@@ -145,9 +131,10 @@ class FileManager:
         """
         try:
             if os.path.exists(path):
-                print("=="*10 +"\n"+ str(self.currDir.joinpath(path).read_text()) +"\n"+ "=="*10)
+                print(
+                    "=="*10 + "\n" + str(self.currDir.joinpath(path).read_text()) + "\n" + "=="*10)
             else:
-                print("Файла с таким именем не существует") 
+                print("Файла с таким именем не существует")
         except OSError:
             pass
 
@@ -165,7 +152,7 @@ class FileManager:
             else:
                 print("Файла с таким именем не существует")
         except OSError:
-            print("Файла с таким именем не существует") 
+            print("Файла с таким именем не существует")
 
     def copyFile(self, curr_path, new_path):
         """
@@ -182,7 +169,7 @@ class FileManager:
             else:
                 print("Файла с таким именем не существует")
         except OSError:
-            print("Файла с таким именем не существует") 
+            print("Файла с таким именем не существует")
 
     def moveFile(self, curr_path, new_path):
         """
@@ -201,7 +188,6 @@ class FileManager:
         except OSError:
             pass
 
-
     def renameFile(self, path, new_name):
         """
         Задание 10
@@ -219,7 +205,7 @@ class FileManager:
         except FileExistsError:
             print("Файл уже существует")
         except OSError:
-            print("Файла с таким именем не существует") 
+            print("Файла с таким именем не существует")
 
     def showTree(self, path):
         """
@@ -228,8 +214,6 @@ class FileManager:
         tree = os.walk(path)
         for i in tree:
             print(i[0])
-
-
 
     def info(self):
         """
@@ -251,5 +235,4 @@ class FileManager:
         print("11.  tree        Показать дерево директорий")
         print("12.  showCD      Узнать текущую директорию")
         print("13.  info        Справка")
-
         print(str("=-" * 30)+"=")
