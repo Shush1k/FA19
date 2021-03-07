@@ -22,4 +22,24 @@ public abstract class Alerts {
         alert.showAndWait();
     }
 
+    public static void shoNoValidEmail(Stage stage){
+        /* Если пользователь вводит некорректный Email*/
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.initOwner(stage);
+        alert.setTitle("Формат почты");
+        alert.setHeaderText("Введите корректную электронную почту!");
+        alert.setContentText("Пример почты: jakobknight@mail.ru");
+        alert.showAndWait();
+    }
+
+    public static void shoNoValidPhoneNumber(Stage stage){
+        /* Если пользователь вводит некорректный номер телефона*/
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.initOwner(stage);
+        alert.setTitle("Формат номера телефона");
+        alert.setHeaderText("Введите номер телефона в указанном формате");
+        alert.setContentText("Формат ввода: +7{номер телефона} или 8{номер телефона}");
+        alert.showAndWait();
+    }
+
 }
