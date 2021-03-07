@@ -8,7 +8,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import program.controllers.PersonEditingDialog;
 import program.controllers.PersonOverviewController;
 import program.models.Person;
 
@@ -21,7 +23,7 @@ public class Main extends Application {
     private ObservableList<Person> personData = FXCollections.observableArrayList();
 
     public Main(){
-        for(int i=0; i<40; i++){
+        for(int i=0; i<10; i++){
             personData.add(new Person("Имя" + i, "Фамилия" + i));
         }
     }
@@ -33,10 +35,9 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("Address Application");
+        this.primaryStage.setTitle("My Application");
 
         initRootLayout();
-
         showPersonOverview();
     }
 
@@ -69,15 +70,37 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
+    public boolean showPersonEditDialog(Person person){
+        try{
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("views/personEditDialog.fxml"));
 
+            AnchorPane page = (AnchorPane) loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Person info");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            PersonEditingDialog controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setPerson(person);
+            //MVC - Model View Controller
+            dialogStage.showAndWait();
+            return controller.isClicked();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
     public Stage getPrimaryStage() {
         return primaryStage;
     }
 
-    public BorderPane getRootLayout() {
-        return rootLayout;
-    }
-
+    /*App start*/
     public static void main(String[] args) {
         launch(args);
     }

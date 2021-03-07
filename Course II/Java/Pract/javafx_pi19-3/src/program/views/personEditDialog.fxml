@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="304.0" prefWidth="326.0" styleClass="background" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controllers.PersonEditingDialog">
+    <children>
+        <GridPane layoutY="3.0" prefHeight="241.0" prefWidth="300.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="103.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="198.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label fx:id="FirstNameLabel" text="First Name" textFill="#58a6ff">
+               <font>
+                  <Font name="Chalkboard SE Light" size="13.0" />
+               </font></Label>
+                <Label text="Last Name" GridPane.rowIndex="1" />
+                <Label text="Street" GridPane.rowIndex="2" />
+                <Label text="City" GridPane.rowIndex="3" />
+                <Label text="Postal Code" GridPane.rowIndex="4" />
+                <Label text="Birthday" GridPane.rowIndex="5" />
+                <TextField fx:id="firstNameField" GridPane.columnIndex="1" />
+                <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="streetField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="cityField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="postalCodeField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <TextField fx:id="birthdayField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            </children>
+        </GridPane>
+        <HBox layoutX="112.0" layoutY="261.0" prefHeight="31.0" prefWidth="198.0" spacing="25.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="16.0">
+            <children>
+                <Button fx:id="OKBtn" defaultButton="true" mnemonicParsing="false" onAction="#handleOkPerson" prefHeight="31.0" prefWidth="113.0" text="OK" textFill="#3a3a3a" />
+                <Button fx:id="CancelBTN" cancelButton="true" mnemonicParsing="false" onAction="#handleCancel" prefHeight="31.0" prefWidth="149.0" text="Cancel" />
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

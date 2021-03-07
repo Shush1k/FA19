@@ -1,0 +1,135 @@
+.background {
+    -fx-background-color: #0d1117;
+}
+
+.label {
+    -fx-font-size: 13pt;
+    -fx-font-family: "Chalkboard SE";
+    -fx-text-fill: #58a6ff;
+    -fx-opacity: 1;
+}
+
+.label-bright {
+    -fx-font-size: 13pt;
+    -fx-font-family: "Luminari";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+
+.label-header {
+    -fx-font-size: 20pt;
+    -fx-font-family: "Chalkboard SE";
+    -fx-text-fill: #58a6ff;
+    -fx-opacity: 1;
+}
+.text-field {
+    -fx-fill: 11pt;
+    -fx-font-family: "Chalkboard SE";
+}
+.table-view {
+    -fx-base: #0d1117;
+    -fx-background-color: #0d1117;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 14;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color:
+            transparent
+            transparent
+            derive(-fx-base, 80%)
+            transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 14pt;
+    -fx-font-family: "Chalkboard SE";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+.table-view .table-cell{
+    -fx-font-size: 11pt;
+    -fx-text-fill: white;
+    -fx-font-family: "Luminari";
+}
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
+
+.split-pane:horizontal > .split-pane-divider {
+    -fx-border-color: transparent #0d1117 transparent #0d1117;
+    -fx-background-color: transparent, derive(#0d1117,20%);
+}
+
+.split-pane {
+    -fx-padding: 1 0 0 0;
+}
+
+.menu-bar {
+    -fx-background-color: derive(#0d1117,20%);
+}
+
+.context-menu {
+    -fx-background-color: derive(#0d1117,50%);
+}
+
+.menu-bar .label {
+    -fx-font-size: 14pt;
+    -fx-font-family: "Chalkboard SE";
+    -fx-text-fill: white;
+    -fx-opacity: 0.9;
+}
+
+.menu .left-container {
+    -fx-background-color: black;
+}
+
+.button {
+    /*-fx-padding: 5 22 5 22;*/
+    -fx-border-color: white;
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-font-family: "Chalkboard SE";
+    -fx-font-size: 11pt;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2; /*не знаю как, но оно сделало нормальную накладку внешней границы*/
+}
+
+.button:hover {
+    -fx-background-color: purple
+}
+
+.button:pressed, .button:default:hover:pressed {
+    -fx-background-color: white;
+    -fx-text-fill: #0d1117;
+}
+
+
+.button:disabled, .button:default:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: #0d1117;
+    -fx-text-fill: white;
+}
+
+.button:default {
+    -fx-background-color: -fx-focus-color;
+    -fx-text-fill: white;
+}
+.button:cancel {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+.button:cancel:hover {
+    -fx-background-color: derive(dodgerblue,30%);
+}
+.button:default:hover {
+    -fx-background-color: derive(-fx-focus-color,30%);
+}

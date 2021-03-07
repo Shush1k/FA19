@@ -11,13 +11,15 @@ public class Person {
     private StringProperty city;
     private IntegerProperty postalCode;
     private ObjectProperty<LocalDate> birthDay;
-
+    public Person(){
+        this(null, null);
+    }
 
     public Person(String firstName, String lastName){
         this.firstName = new SimpleStringProperty(firstName);
         this.lastName = new SimpleStringProperty(lastName);
 
-        // Какие-то фиктивные значения
+        //Дефолт
         this.street = new SimpleStringProperty("Какая-то улица");
         this.city = new SimpleStringProperty("Какой-то город");
         this.postalCode = new SimpleIntegerProperty(1234);

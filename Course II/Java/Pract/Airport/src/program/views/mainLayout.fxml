@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controllers.MainLayoutController">
+<top>
+    <ToolBar prefHeight="40.0" prefWidth="269.0" BorderPane.alignment="CENTER">
+        <items>
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="73.0" onAction="#openArrivalBoard" text="Прилеты" />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="64.0" onAction="#openDepartureBoard" text="Вылеты" />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="107.0" onAction="#openAirlineInfo" text="Авиакомпании" />
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="120.0" onAction="#openEditPerson" text="Личный Кабинет" />
+        </items>
+    </ToolBar>
+</top>
+</BorderPane>

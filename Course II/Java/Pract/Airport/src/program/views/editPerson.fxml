@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controllers.EditPersonController">
+    <children>
+        <Label layoutX="324.0" layoutY="18.0" text="Личный кабинет">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <GridPane layoutX="240.0" layoutY="92.0" vgap="5.0" AnchorPane.leftAnchor="240.0">
+            <columnConstraints>
+                <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="224.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+            <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="54.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" text="Логин" />
+                <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Дата рождения" GridPane.rowIndex="1" />
+            <Label text="Пол" GridPane.rowIndex="2" />
+            <Label text="Имя" GridPane.rowIndex="3" />
+                <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Фамилия" GridPane.rowIndex="4" />
+            <Label text="Серия паспорта" GridPane.rowIndex="5" />
+            <Label text="Номер паспорта" GridPane.rowIndex="6" />
+                <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Номер телефона" GridPane.rowIndex="7" />
+                <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Email" GridPane.rowIndex="8" />
+                <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Пароль" GridPane.rowIndex="9" />
+                <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Повтор пароля" GridPane.rowIndex="10" />
+            <Label fx:id="loginLabel" text="Label" GridPane.columnIndex="1" />
+            <Label fx:id="birthdayLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="sexLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="firstNameField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="seriesField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="numberField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                <PasswordField fx:id="repeatPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+        </GridPane>
+        <Button layoutX="645.0" layoutY="398.0" mnemonicParsing="false" onAction="#handleDeleteAcc" prefHeight="30.0" prefWidth="130.0" text="Удалить аккаунт" textFill="#f85149" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+         <font>
+            <Font name="Apple Symbols" size="14.0" />
+         </font>
+      </Button>
+          <Button layoutX="230.0" layoutY="553.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="30.0" prefWidth="140.0" text="Изменить данные" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="240.0">
+              <cursor>
+                  <Cursor fx:constant="HAND" />
+              </cursor>
+      </Button>
+    </children>
+</AnchorPane>

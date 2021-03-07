@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controllers.DepartureBoardController">
+    <top>
+        <AnchorPane prefHeight="180.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="timefromLabel" layoutX="32.0" layoutY="62.0" text="Время с" AnchorPane.leftAnchor="30.0">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="22.0" />
+                    </font>
+                </Label>
+                <Label fx:id="timetoLabel" layoutX="29.0" layoutY="108.0" text="Время по" AnchorPane.leftAnchor="30.0">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="22.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="dateComboBox" layoutX="29.0" layoutY="18.0" prefHeight="27.0" prefWidth="143.0" promptText="Дата">
+                    <cursor>
+                        <Cursor fx:constant="NONE" />
+                    </cursor>
+                </ComboBox>
+                <Button fx:id="showFlightsBtn" layoutX="371.0" layoutY="103.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="198.0" text="Показать рейсы" textFill="#142bcc">
+                    <font>
+                        <Font size="18.0" />
+                    </font></Button>
+                <TextField fx:id="timefromField" layoutX="166.0" layoutY="66.0" AnchorPane.leftAnchor="150.0" />
+                <TextField fx:id="timetoField" layoutX="163.0" layoutY="113.0" AnchorPane.leftAnchor="150.0" />
+            </children>
+        </AnchorPane>
+    </top>
+    <center>
+        <AnchorPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+            <children>
+                <SplitPane layoutX="144.0" layoutY="40.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="298.0" prefWidth="221.0" styleClass="table-view">
+                            <children>
+                                <TableView fx:id="personTable" prefHeight="298.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="flightNumber" prefWidth="102.0" text="Номер рейса" />
+                                        <TableColumn fx:id="arrival_date" prefWidth="92.02156066894531" text="Дата вылета" />
+                                        <TableColumn fx:id="arrival_time" prefWidth="225.97842407226562" text="Время вылета" />
+                                        <TableColumn fx:id="city_to" prefWidth="53.0" text="Аэропорт назначения" />
+                                        <TableColumn fx:id="status" prefWidth="53.0" text="Статус" />
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

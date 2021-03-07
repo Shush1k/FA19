@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controllers.RegistrationPageController">
+    <children>
+        <Label fx:id="Registration" layoutX="141.0" layoutY="14.0" text="Регистрация" AnchorPane.leftAnchor="141.0" AnchorPane.topAnchor="30.0">
+            <font>
+                <Font name="Chalkboard" size="20.0" />
+            </font>
+        </Label>
+        <GridPane layoutY="106.0" prefHeight="425.0" prefWidth="340.0" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="106.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="103.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="198.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label fx:id="loginLabel" text="Логин *" />
+                <Label fx:id="passwordLabel" text="Пароль *" GridPane.rowIndex="1" />
+                <Label fx:id="passwordRepeatLabel" text="Подтверждение *" GridPane.rowIndex="2" />
+                <Label fx:id="FirstNameLabel" text="Имя *" GridPane.rowIndex="3" />
+                <Label fx:id="LastNameLabel" text="Фамилия *" GridPane.rowIndex="4" />
+                <Label fx:id="SexLabel" prefHeight="17.0" prefWidth="55.0" text="Пол *" GridPane.rowIndex="5" />
+                <Label fx:id="BirthdayLabel" text="Дата рождения *" GridPane.rowIndex="6" />
+                <Label fx:id="PassportSeriesLabel" text="Серия паспорта *" GridPane.rowIndex="7" />
+                <Label fx:id="PassportNumberLabel" text="Номер пасспорта *" GridPane.rowIndex="8" />
+                <Label fx:id="EmailLabel" text="Email" GridPane.rowIndex="9" />
+                <TextField fx:id="loginField" GridPane.columnIndex="1" />
+                <TextField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="passwordRepeatField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="firstNameField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <TextField fx:id="sexField" promptText="М/Ж" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <DatePicker fx:id="birthdayField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <TextField fx:id="seriesField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <TextField fx:id="numberField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            </children>
+        </GridPane>
+        <HBox layoutX="107.0" layoutY="538.0" prefHeight="31.0" prefWidth="263.0" spacing="30.0" AnchorPane.bottomAnchor="31.0" AnchorPane.rightAnchor="30.0">
+            <children>
+                <Button fx:id="OKBtn" onAction="#handleRegistration" defaultButton="true" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" text="Зарегистрироваться" />
+                <Button fx:id="CancelBTN" onAction="#handleCancel" mnemonicParsing="false" prefHeight="31.0" prefWidth="79.0" text="Отмена" />
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
