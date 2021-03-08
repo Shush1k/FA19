@@ -13,7 +13,7 @@ class FileManager:
 
     def __init__(self, path):
         """
-        @param self.PATH - рабочая директория
+        @param path - рабочая директория
         """
         self.PATH = Path(path).absolute()
         self.last_dir = self.PATH.name
@@ -25,6 +25,9 @@ class FileManager:
         self.currDir = self.PATH
 
     def getCurrDir(self):
+        """
+        Текущая директория
+        """
         return self.currDir
 
     def createDir(self, path):
@@ -210,6 +213,8 @@ class FileManager:
     def showTree(self, path):
         """
         Показ структуры папки
+
+        @param path - текущая директория
         """
         tree = os.walk(path)
         for i in tree:
