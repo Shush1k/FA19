@@ -59,7 +59,7 @@ SELECT subj_id, MAX(semester) "Max_semester" FROM subject
 GROUP BY subj_id;
 
 -- Задание 15
-SELECT DISTINCT COUNT(student_id) "Кол-во студентов", exam_date , exam_id  
+SELECT COUNT(DISTINCT student_id) "Кол-во студентов", exam_date , exam_id  
 FROM exam_marks
 GROUP BY exam_id;
 
