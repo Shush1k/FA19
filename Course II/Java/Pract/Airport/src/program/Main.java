@@ -123,7 +123,7 @@ public class Main extends Application {
             /* Отображение сцены Автор*/
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/aboutPage.fxml"));
-            AnchorPane aboutPage = (AnchorPane) loader.load();
+            AnchorPane aboutPage = loader.load();
             Stage stage = new Stage();
             stage.setTitle("Shush1k страница");
             stage.initModality(Modality.WINDOW_MODAL);
@@ -135,6 +135,7 @@ public class Main extends Application {
 
             AboutPageController controller = loader.getController();
             controller.setAboutStage(stage);
+            controller.setHostServices(getHostServices());
             stage.showAndWait();
         } catch (IOException e) {
             e.printStackTrace();

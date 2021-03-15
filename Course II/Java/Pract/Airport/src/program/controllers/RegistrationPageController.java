@@ -65,7 +65,6 @@ public class RegistrationPageController {
     private void handleRegistration(){
 //        TODO действия после нажатия на кнопку Зарегистрироваться
         RegistrationStage.close();
-        main.MainLayout();
     }
 
     public void setMain(Main main) {
