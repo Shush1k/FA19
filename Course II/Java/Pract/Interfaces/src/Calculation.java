@@ -1,6 +1,4 @@
-package com.work3_1;
-
-public interface Calculatable {
+public interface Calculation {
     default int sum(int a, int b){
         return sumAll(a, b);
     }

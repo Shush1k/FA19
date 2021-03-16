@@ -1,5 +1,3 @@
-package com.work3_1;
-
 public class Print implements Printable{
     private String author;
     private String name;
@@ -20,6 +18,4 @@ public class Print implements Printable{
         this.author = author;
         this.name = name;
     }
-
-
 }
