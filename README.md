@@ -12,6 +12,6 @@
 
 [![Course II](https://img.shields.io/badge/Course-II-blue?style=plastic)](https://github.com/Shush1k/FA19/tree/master/Course%20II)
 * [:snake: Python](https://github.com/Shush1k/FA19/tree/master/Course%20II/Python)
-* [:coffee: Java](https://github.com/Shush1k/FA19/tree/master/Course%20II/Java)
+* [:coffee: Java](https://github.com/Shush1k/FA19/tree/master/Course%20II/Java/Pract)
 * [:penguin: UNIX и сетевые технологии](https://github.com/Shush1k/FA19/tree/master/Course%20II/UNIX)
 * [SQL](https://github.com/Shush1k/FA19/tree/master/Course%20II/SQL)
