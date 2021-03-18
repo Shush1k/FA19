@@ -1,27 +1,25 @@
-package com.work3_2_teacher;
-
+package another;
 
 import java.util.Arrays;
 
 public class BaseConverter {
 
+    private static final Character[] AvBase = {'K', 'C', 'F'};
     public double baseValue;
     private char base;
-    private static Character[] AvBase = {'K', 'C', 'F'};
 
-    BaseConverter(double baseValue){
+    BaseConverter(double baseValue) {
         base = 'C';
         this.baseValue = baseValue;
     }
-    BaseConverter(double baseValue, boolean isFahr){
-        if(isFahr){
+
+    BaseConverter(double baseValue, boolean isFahr) {
+        if (isFahr) {
             base = 'F';
-            this.baseValue = baseValue;
-        }
-        else{
+        } else {
             base = 'K';
-            this.baseValue = baseValue;
         }
+        this.baseValue = baseValue;
 
     }
 
@@ -29,16 +27,15 @@ public class BaseConverter {
         return base;
     }
 
-    public int setBase(char base){
-        if(base == this.base)
+    public int setBase(char base) {
+        if (base == this.base)
             return (int) this.baseValue;
-        if(Arrays.asList(AvBase).contains(base)) {
-            switch(this.base){
+        if (Arrays.asList(AvBase).contains(base)) {
+            switch (this.base) {
                 case 'C':
-                    if(base == 'F'){
+                    if (base == 'F') {
                         this.baseValue = new CelToFahr().getConvertedValue(this.baseValue);
-                    }
-                    else{
+                    } else {
                         this.baseValue = new CelToKel().getConvertedValue(this.baseValue);
                     }
                     break;
@@ -51,8 +48,7 @@ public class BaseConverter {
             }
             this.base = base;
             return (int) this.baseValue;
-        }
-        else{
+        } else {
             System.out.println("Uncorrectable base!");
             throw new ArithmeticException();
         }

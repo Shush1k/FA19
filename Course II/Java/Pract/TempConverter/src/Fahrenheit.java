@@ -1,4 +1,4 @@
-public class Fahrenheit implements Convert{
+public class Fahrenheit implements Convert {
 
     @Override
     public double getConvertedValue(double value) {

@@ -1,7 +1,5 @@
-package com.work3_2_teacher;
-
+package another;
 
 public interface Converter {
     double getConvertedValue(double baseValue);
-
 }
