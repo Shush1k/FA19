@@ -8,7 +8,8 @@ public class Task9 {
         System.out.println(run(31));
         System.out.println(run(158));
     }
-    public static int run(int numb){
-        return numb-21;
+
+    public static int run(int numb) {
+        return numb - 21;
     }
 }
