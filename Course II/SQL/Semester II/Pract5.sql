@@ -50,8 +50,8 @@ WHERE location_id = :f);
 */
 SELECT emp.last_name, emp.salary 
 FROM employees emp 
-WHERE emp.manager_id IN  
-(SELECT employee_id FROM employees WHERE last_name = 'King'); 
+WHERE emp.department_id =
+(SELECT department_id FROM employees WHERE last_name = 'King'); 
 
 /*
 Задача 6 
