@@ -15,3 +15,4 @@
 * [:coffee: Java](https://github.com/Shush1k/FA19/tree/master/Course%20II/Java/Pract)
 * [:penguin: UNIX и сетевые технологии](https://github.com/Shush1k/FA19/tree/master/Course%20II/UNIX)
 * [SQL](https://github.com/Shush1k/FA19/tree/master/Course%20II/SQL)
+* [Python SQL](https://github.com/Shush1k/FA19/tree/master/Course%20II/Python/Semester%20II/Python_SQL) (SQL Alchemy)
