@@ -1,0 +1,7 @@
+h1 {
+    color: #a619d2; /* Цвет заголовка */
+    font-size: 24pt; /* Размер шрифта в пунктах */
+    font-family: Georgia, Times, serif; /* Семейство шрифтов */
+    font-weight: normal; /* Нормальное начертание текста  */
+    text-align: end;
+  }
