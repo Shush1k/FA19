@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 2</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+
+<!-- 2. (а) SELECT, INPUT 
+(б)В элементе INPUT выбрать цвет.
+(в)По кнопке изменить цвет текста документа
+Значения цветов в SELECT изначально заданы в массиве
+ -->
+<script>
+
+    function change_color(color) {
+        document.body.style.background = document.getElementById("col").value;
+        document.getElementById("txt").value = document.getElementById("col").value;;
+    };
+</script>
+
+<form name="form_1">
+    <br><input id="txt" type="text" value="z">
+    <br>
+    <select id="col" name="colors">
+        <option value="red">red</option>
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+    </select>
+    <br>
+    <input type="button" onclick="change_color()" value="изменить цвет">
+
+</form>
+</body>
