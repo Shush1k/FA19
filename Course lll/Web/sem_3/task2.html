@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 2</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<style>
+    .layer2 {
+        margin-left: 10%;
+        margin-right: 10%;
+        background-color: rgb(0, 255, 200);
+        margin-top: 100px;
+        text-align: left;
+    }
+
+    body {
+        background-color: rgb(38, 42, 42);
+
+    }
+
+    button {
+        background-color: rgb(42, 194, 194);
+    }
+
+    button:active {
+        background: rgb(111, 0, 255);
+    }
+</style>
+<script>
+
+    function f1() {
+
+        x = document.getElementById('x').value
+        document.getElementById('x').value = x * 2
+    };
+</script>
+
+<body>
+    <div class="layer1">
+        <div class="layer2">
+            <html>
+            <h4>Условие задачи:</h4>
+            В окне 2 элемента: элемент для ввода текста и кнопка. Вводится строка.<br>
+            По нажатию кнопки строка удваивается
+            <h3>Баранов А.В. ПИ19-3</h3>
+
+
+            <br>
+            <input type="number" id="x" value="10">
+            <button id="bt1" onclick="f1()">double</button>
+
+            </html>
+        </div>
+    </div>
+
+</body>
