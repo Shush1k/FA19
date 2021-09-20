@@ -16,3 +16,10 @@
 * [:penguin: UNIX и сетевые технологии](https://github.com/Shush1k/FA19/tree/master/Course%20II/UNIX)
 * [SQL](https://github.com/Shush1k/FA19/tree/master/Course%20II/SQL)
 * [Python SQL](https://github.com/Shush1k/FA19/tree/master/Course%20II/Python/Semester%20II/Python_SQL) (SQL Alchemy)
+
+
+[![Course III](https://img.shields.io/badge/Course-III-blue?style=plastic)](https://github.com/Shush1k/FA19/tree/master/Course%20lll)
+* [🆔 TOBD](https://github.com/Shush1k/FA19/tree/master/Course%20lll/TOBD)
+* [🕸 WEB](https://github.com/Shush1k/FA19/tree/master/Course%20lll/Web)
+* [:book: English](https://github.com/Shush1k/FA19/tree/master/Course%20lll/English)
+* [♿ Excel](https://github.com/Shush1k/FA19/tree/master/Course%20lll/Excel)
