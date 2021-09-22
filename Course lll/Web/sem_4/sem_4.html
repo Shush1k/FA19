@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sem4</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+<script>
+
+    function change_color(color) {
+        document.getElementById("submit").style.color = "red"
+    };
+</script>
+
+
+<body>
+    <div class="layer1">
+        <h1>Форма опроса</h1>
+        <div class="layer3">
+        </div>
+        <div class="layer2">
+            <div class="task_cond">
+                <br>
+                <h2>Условие задачи:</h2>
+
+                Реализовать форму опроса.<br>
+                Вы создадите 5 основных компонентов, которые необходимо включить в форму опроса.<br>
+
+                ● Заголовок<br>
+                ● Короткий абзац с подробным описанием формы<br>
+                ● Различные формы ввода, такие как обычный текст, номер, электронная почта, раскрывающийся список,
+                переключатель, флажок и текстовая область<br>
+                ● Кнопка отправки для отправки данных<br><br>
+
+                Обязательно сделать стилизацию опроса при помощи CSS.<br>
+                Для решения задачи не использовать фреймворки.
+                <h4>Баранов А.В. ПИ19-3</h4>
+                </form>
+            </div>
+            <h2>Нравится ли вам тратить время на путь к университету?</h2>
+            </form>
+            <form name="form_2">
+                <b>Ф.И.О.</b><br>
+                <input type=text name="fio" size=37 maxlength=100><br><br>
+                <b>Email:</b><br>
+                <input type=text name="email" size=37 maxlength=80><br><br>
+                <b>Ваша оценка (1-очень плохо; 10-очень хорошо):</b><br>
+                <input type=text name="email" size=37 maxlength=2><br><br>
+            </form>
+
+            <form name="checkboxer">
+                <b>Какой тип обучения вы бы выбрали?</b><br>
+                <input type=checkbox name="dist" value="yes" checked> дистант<br>
+                <input type=checkbox name="dist" value="yes" checked> дистант<br>
+                <input type=checkbox name="dist" value="yes" checked> дистант<br>
+                <input type=checkbox name="dist" value="yes" checked> дистант<br>
+                <input type=checkbox name="no_dist" value="no"> очное (я за страдания!)
+                <br><br>
+            </form>
+            <form name="selecter">
+                <b>Какая дисциплина наиболее интересная?</b><br>
+                <select name="country">
+                    <option value="Web">Web-технологии
+                    <option value="Python">Python
+                    <option value="Excel">Excel
+                    <option value="English">English
+                </select>
+
+            </form>
+            <br>
+            <form name="raider">
+                <b>Вы довольны обучением?</b><br>
+                <input type="radio" name="abc" value="">Да<br>
+                <input type="radio" name="abc" value="">Нет<br>
+                <input type="radio" name="abc" value="" checked>Я держусь<br>
+            </form>
+            <br><br>
+
+            <p><b>Понравился опрос?</b></p>
+            <p><textarea rows="5" cols="30" name=""></textarea></p>
+            <p><input type="submit" value="Отправить"></p>
+
+        </div>
+        <br>
+        <br>
+    </div>
+
+</body>
+<br>
+
+</html>

@@ -1,0 +1,30 @@
+.colortext {
+    background-color: #ffe;
+    /* Цвет фона */
+    color: rgb(255, 0, 0);
+    /* Цвет текста */
+}
+
+.layer1 {
+    margin-top: 20px;
+    background-color: rgb(73, 176, 236);
+    text-align: center;
+}
+.layer2 {
+    background-color: rgb(253, 253, 253);
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    text-align: center;
+}
+.layer3 {
+    background-color: rgb(253, 253, 253);
+    margin-left: 5%;
+    text-align: justify;
+}
+.task_cond {
+    margin-top: 5%;
+    margin-left: 5%;
+    text-align: left;
+    
+}
