@@ -78,76 +78,118 @@
     </div>
   </div> -->
 
-  <div class="layer1">
-    <h1>Форма опроса</h1>
-    <div class="layer3">
-    </div>
-    <div class="layer2">
-      <div class="task_cond">
-        <form name="form_1">
-          <br>
-          <h2>Условие задачи:</h2>
 
-          Реализовать форму опроса.<br>
-          Вы создадите 5 основных компонентов, которые необходимо включить в форму опроса.<br>
-
-          ● Заголовок<br>
-          ● Короткий абзац с подробным описанием формы<br>
-          ● Различные формы ввода, такие как обычный текст, номер, электронная почта, раскрывающийся список,
-          переключатель, флажок и текстовая область<br>
-          ● Кнопка отправки для отправки данных<br><br>
-
-          Обязательно сделать стилизацию опроса при помощи CSS.<br>
-          Для решения задачи не использовать фреймворки.
-          <h4>Баранов А.В. ПИ19-3</h4>
-        </form>
+  <div class="layer3">
+    <div class="display-8">
+      <h1>Баранов А.В. ПИ19-3</h1>
+      <h2>Задача:</h2>
+      <br><h3>Реализовать при помощи Bootstrap форму опроса.</h3></br>
+      <h4>5 основных компонентов, которые необходимо включить в форму опроса.</h4>
+      <div class="layer4">
+        ● Заголовок
+        <br>● Короткий абзац с подробным описанием формы</br>
+        ● Различные формы ввода, такие как обычный текст, номер, электронная почта, раскрывающийся список,
+        переключатель, флажок и текстовая область
+        <br>● Кнопка отправки для отправки данных</br>
       </div>
-      <h2>Нравится ли вам тратить время на путь к университету?</h2>
+    </div>
+  </div>
 
-      <form name="form_2">
-        <b>Ф.И.О.</b><br>
-        <input type=text name="fio" size=37 maxlength=100><br><br>
-        <b>Email:</b><br>
-        <input type=text name="email" size=37 maxlength=80><br><br>
-        <b>Ваша оценка (1-очень плохо; 10-очень хорошо):</b><br>
-        <input type=text name="email" size=37 maxlength=2><br><br>
-      </form>
+  <div class="main-layer, text-center">
 
-      <form name="checkboxer">
-        <b>Какой тип обучения вы бы выбрали?</b><br>
-        <input type=checkbox name="dist" value="yes" checked> дистант<br>
-        <input type=checkbox name="dist" value="yes" checked> дистант<br>
-        <input type=checkbox name="dist" value="yes" checked> дистант<br>
-        <input type=checkbox name="dist" value="yes" checked> дистант<br>
-        <input type=checkbox name="no_dist" value="no"> очное (я за страдания!)
-        <br><br>
-      </form>
-      <form name="selecter">
-        <b>Какая дисциплина наиболее интересная?</b><br>
-        <select name="country">
+    <h2 class="display-6">Расскажите о себе</h2>
+    <form>
+      <div class="row mb-4">
+        <div class="col-xl">
+          <input type="email" id="email-form" class="form-control" />
+          <label class="form-label" for="email-form">Email address</label>
+        </div>
+
+        <div class="col">
+          <div class="form-outline">
+            <input type="text" id="first-name-form" class="form-control" />
+            <label class="form-label" for="first-name-form">First name</label>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="form-outline mb-lg-0">
+            <input type="text" id="last-name-form" class="form-control" />
+            <label class="form-label" for="last-name-form">Last name</label>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+  <div class="main-layer, text-center">
+    <div class="col">
+      <div class="form-outline mb-lg-0">
+        <h3 class="display-6">Нравится ли вам тратить время на путь к университету?</h3>
+        <input type=text id="mark-form" maxlength=2 class="form-control">
+        <label class="form-label" for="mark-form">Ваша оценка (1-очень плохо; 10-очень хорошо):</label>
+      </div>
+    </div>
+  </div>
+  <div class="main-layer, text-center">
+    <h3 class="display-6">Какой тип обучения вы бы выбрали?</h3>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+        дистант
+      </li>
+      <li class="list-group-item">
+        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+        дистант
+      </li>
+      <li class="list-group-item">
+        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+        дистант
+      </li>
+      <li class="list-group-item">
+        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+        дистант
+      </li>
+      <li class="list-group-item">
+        <input class="form-check-input me-1" type="checkbox" checked>
+        очное (я за страдания!)
+      </li>
+    </ul>
+  </div>
+
+  <div class="selector">
+    <h4 class="display-6">Какая дисциплина наиболее интересная?</h4>
+    <form name="selecter">
+      <label>
+        <select class="form-select" aria-label="discipline-select">
+          <option selected value="English">English</option>
           <option value="Web">Web-технологии
           <option value="Python">Python
           <option value="Excel">Excel
-          <option value="English">English
         </select>
+      </label>
+    </form>
+  </div>
 
-      </form>
-      <br>
-      <form name="raider">
-        <b>Вы довольны обучением?</b><br>
-        <input type="radio" name="abc" value="">Да<br>
-        <input type="radio" name="abc" value="">Нет<br>
-        <input type="radio" name="abc" value="" checked>Я держусь<br>
-      </form>
-      <br><br>
+  <div class="raider">
+    <h6 class="display-6">Вы довольны своими знаниями в программировании?</h6>
+    <input class="form-check-input" type="radio" name="abc" id="yes">
+    <label class="form-check-label" for="yes">
+      Да
+    </label>
+    <input class="form-check-input" type="radio" name="abc" id="no">
+    <label class="form-check-label" for="no">
+      Нет
+    </label>
+    <h6 class="display-6">Понравился опрос?</h6>
+  </div>
 
-      <p><b>Понравился опрос?</b></p>
-      <p><textarea rows="5" cols="30" name=""></textarea></p>
-      <p><input type="submit" value="Отправить"></p>
 
-    </div>
-    <br>
-    <br>
+  <div class="form-group">
+    <textarea class="form-control" id="comment" rows="5" style="width: 400px"></textarea>
+  </div>
+  <div class="layer2">
+    <button type="submit" class="btn btn-primary">Отправить</button>
   </div>
 
 </body>
