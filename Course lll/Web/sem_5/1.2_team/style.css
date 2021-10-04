@@ -1,0 +1,88 @@
+body {
+    font-family: 'Courier New';
+    font-size: 14px;
+    display: flex;
+    background:rgb(200, 200, 200);
+    margin-top: 5%;
+}
+
+.wrap {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+}
+
+.card {
+    position: relative;
+    background: white;
+    padding: 15px;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top:65px;
+    left: 59px;
+    width: 2px;
+    height: 73%;
+    background:rgb(200, 200, 200);
+}
+
+.title {
+    display: flex;
+    margin: 15px 0px;
+}
+
+.title__avatar {
+    margin: 10px;
+    /* Аватар поверх серой линии, хотя я и сдвинул линию вниз, решил оставить */
+    z-index: 1; 
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.title__info {
+    padding: 5% 10%;
+}
+
+.title__info__name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: -10px;
+}
+
+.list-item {
+    position: relative;
+    display: flex;
+    margin: 10px 65px;
+}
+
+.list-item::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: -31px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #52ffc0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.list-item__content__name {
+    font-weight: bold;
+    margin-bottom: 13px;
+}
+
+.list-item__content__desc {
+    color: gray;
+}
+
+.list-item__date {
+    color: gray;
+    margin: 0px 0px 0px 260px;
+    transform: translate(0, -20px);
+}
