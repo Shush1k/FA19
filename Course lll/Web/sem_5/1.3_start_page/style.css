@@ -1,0 +1,84 @@
+.auth-form-header {
+    margin-bottom: 15px;
+    text-align: center;
+    color: rgb(36, 41, 47);
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+}
+
+.auth-form-body {
+    display: block;
+    padding: 20px;
+    font-size: 14px;
+    background-color: rgb(246, 248, 250);
+    width: 340px;
+    margin: 0 auto;
+    border-radius: 6px;
+    border: 1px solid rgb(161, 160, 160);
+}
+
+.logged-in {
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 14px;
+    line-height: 1.5;
+    color: black;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.login-callout {
+    padding: 15px 20px;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid rgb(161, 160, 160);
+    background-color: white;
+    width: 340px;
+    margin: 20px auto;
+}
+
+.btn-block {
+    display: block;
+    width: 339px;
+    text-align: center;
+}
+
+.btn {
+    margin-top: 20px;
+    color: white;
+    background-color: rgb(52, 173, 86);
+    position: inherit;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    border: 1px solid rgb(97, 96, 96);
+    border-radius: 6px;
+}
+
+.btn:hover {
+    background-color: rgb(41, 142, 70);
+    cursor: pointer;
+}
+
+.input-block {
+    margin-top: 7px;
+    margin-bottom: 15px;
+    display: block;
+    width: 313px;
+    border: 1px solid rgb(97, 96, 96)
+}
+
+.form-control {
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 6px;
+}
+
+.label-link {
+    float: right;
+    font-size: 12px;
+}
