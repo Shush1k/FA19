@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Join GitHub · GitHub</title>
+    <link rel="stylesheet" href="./style-reg.css">
+</head>
+
+<body class="logged-out env-production page-responsive height-full d-flex flex-column header-overlay"
+    style="word-wrap: break-word;">
+
+    <div class="back-art">
+        <img src="./img/github-back.jpg" alt="Art" >
+    </div>
+
+
+
+    <header class="header-logged-out" role="banner">
+        <div class="d-flex flex-justify-between flex-items-center width-full">
+            <a href="https://github.com/Shush1k/FA19/tree/master/Course%20lll/Web">
+                <!-- github logo -->
+                <svg viewBox="0 0 16 16" height="32" width="32" class="octocat color-text-white">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                    </path>
+                </svg>
+            </a>
+
+            <div class="font-mktg octocat">
+                <span class="mr-2 text-gray-mktg">Already have an account?</span>
+                <a href="file:///Users/user/Documents/GitHub/FA19/Course%20lll/Web/sem_5/1.3_start_page/signin.html">
+                    Sign in →
+                    </a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="mt-12 d-flex flex-justify-center signup-text-suggester width-full">
+        <div class="m-4 p-4 pt-12 z-1 bg-gray-800-mktg width-full rounded-2 signup-content-container">
+            <form action="/signup" accept-charset="UTF-8" method="post">
+
+                <div id="email-container">
+                    <div class="mt-4">
+                        <label for="email" class="text-mono signup-text">
+                            Enter your email <span class="sr-only">e.g. monalisa@github.com</span>
+                        </label>
+                    </div>
+
+                    <div class="d-flex flex-items-center ">
+                        <div class="d-flex flex-items-center width-full">
+                            <span class="mr-2"></span>
+                            <input id="email" class="signup-input form-control text-mono" autofocus="autofocus" required
+                                type="email" spellcheck="false">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="password-container">
+                    <div class="mt-4">
+                        <label for="password" class="text-mono signup-text">
+                            Create a password
+                        </label>
+                    </div>
+                    <div class="d-flex flex-items-center ">
+                        <div class="d-flex flex-items-center width-full">
+                            <span class="mr-2"></span>
+                            <div class="d-flex flex-items-center mr-3">
+                                <input id="password" class="signup-input form-control text-mono" required
+                                    passwordrules="minlength: 15; allowed: unicode;" type="password" spellcheck="false">
+
+                                <button type="button" class="btn-link">
+                                    <svg height="16" viewBox="0 0 16 16" width="16" class="eye">
+                                        <path
+                                            d="M1.679 7.932c.412-.621 1.242-1.75 2.366-2.717C5.175 4.242 6.527 3.5 8 3.5c1.473 0 2.824.742 3.955 1.715 1.124.967 1.954 2.096 2.366 2.717a.119.119 0 010 .136c-.412.621-1.242 1.75-2.366 2.717C10.825 11.758 9.473 12.5 8 12.5c-1.473 0-2.824-.742-3.955-1.715C2.92 9.818 2.09 8.69 1.679 8.068a.119.119 0 010-.136zM8 2c-1.981 0-3.67.992-4.933 2.078C1.797 5.169.88 6.423.43 7.1a1.619 1.619 0 000 1.798c.45.678 1.367 1.932 2.637 3.024C4.329 13.008 6.019 14 8 14c1.981 0 3.67-.992 4.933-2.078 1.27-1.091 2.187-2.345 2.637-3.023a1.619 1.619 0 000-1.798c-.45-.678-1.367-1.932-2.637-3.023C11.671 2.992 9.981 2 8 2zm0 8a2 2 0 100-4 2 2 0 000 4z">
+                                        </path>
+                                    </svg>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="username-container" class="signup-continue-step-container">
+                    <div class="mt-4">
+                        <label for="login" class="text-mono signup-text">
+                            Enter a username
+                        </label>
+                    </div>
+                    <div class="d-flex flex-items-center ">
+                        <div class="d-flex flex-items-center width-full">
+                            <span class="mr-2"></span>
+                            <input required id="login" class="form-control signup-input text-mono" type="text"
+                                spellcheck="false">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="opt-in-container">
+                    <div class="mt-4">
+                        <label for="optional" class="text-mono signup-text">
+                            Would you like to receive product updates and announcements via email?<br>
+                            Type "y" for yes or "n" for no
+                        </label>
+                    </div>
+
+                    <div class="d-flex flex-items-center">
+                        <div class="d-flex width-full">
+                            <span class="mr-2"></span>
+                            <input type="text" name="optional" id="optional"
+                                class="signup-input form-control text-mono">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="submit-container">
+                    <button name="button" type="submit" class="form-control 
+                            signup-submit-button width-full">Create account</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    </div>
+
+
+
+</body>
+
+</html>

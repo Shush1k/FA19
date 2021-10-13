@@ -1,0 +1,149 @@
+.text-mono {
+    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace !important;
+}
+
+input {
+    caret-color: #00cfc8;
+}
+
+body {
+    overflow: hidden;
+}
+
+.signup-text-suggester {
+    margin: auto 100px;
+    max-width: 600px;
+    min-width: 600px;
+}
+
+.signup-input {
+    background-color: #0c162d;
+    -webkit-text-fill-color: #fff;
+    display: block;
+    width: 300px;
+}
+
+.welcome {
+    font-size: 32px;
+}
+
+.signup-text {
+    color: #00cfc8;
+}
+
+.signup-submit-button {
+    color: rgb(45, 164, 78);
+    background: none;
+    border: 1px solid rgb(45, 164, 78) !important;
+    position: relative;
+    top: 15px;
+}
+
+.color-text-white {
+    color: white;
+    fill: currentColor;
+}
+
+.eye {
+    fill: rgb(173, 164, 164);
+}
+
+img {
+    max-width: 1920px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.btn-link {
+    display: block;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+}
+
+.pt-12 {
+    padding-top: 128px;
+}
+
+.mt-4 {
+    margin-top: 24px;
+}
+
+.mt-12 {
+    margin-top: 128px;
+}
+
+.mb-4 {
+    margin-bottom: 24px;
+}
+
+.mr-2 {
+    margin-right: 8px;
+}
+
+.octocat {
+    margin: 20px 0px 0px 70px;
+}
+
+.width-full {
+    width: 100%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-justify-between {
+    justify-content: space-between;
+}
+
+.header-overlay .header-logged-out, .header-overlay .Header {
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+.bg-gray-800-mktg {
+    background-color: #0c162d;
+}
+
+a {
+    color: white;
+}
+
+.text-gray-mktg {
+    color: #627597;
+}
+
+.form-control {
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    border: 1px solid rgb(185, 180, 185);
+    border-radius: 6px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.back-art {
+    position: absolute;
+    z-index: -1;
+    margin: -8px;
+    height: 100%;
+    width: 100%;
+}
+
+.p-4 {
+    padding: 24px !important;
+}
+
+.m-4 {
+    margin: 24px !important;
+}
+
+.signup-content-container {
+    border: 1px solid #202637;
+    border-radius: 6px;
+}
