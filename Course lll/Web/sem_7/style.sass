@@ -1,0 +1,90 @@
+
+@mixin square($size, $color)
+  width: $size
+  height: $size
+  background-color: $color
+
+@mixin angle-changer()
+  $angle: rotate(45deg)
+  -webkit-transform: $angle
+  -ms-transform: $angle
+  transform: $angle
+
+@mixin border-btn()
+  border-radius: 10%
+  border: 1px solid rgb(15, 15, 15)
+
+$width: 800px
+$awesome-blue: #2196f3
+$title-font: normal 24px/1.5 'Open Sans', sans-serif
+$color: #1db07d
+
+h1.title
+  font: $title-font
+  color: $color
+
+div.container
+  color: $color
+  background: #fff
+  width: 100%
+
+.small-green
+  +square(80px, #2bd714)
+
+.small-azure
+  +square(80px, #38dabf)
+
+.small-pink
+  +square(80px, #c22863)
+  width: $width * 0.05
+  
+
+.frame:hover
+  @include angle-changer()
+
+.frame2:hover
+  @include angle-changer()
+  
+
+.dialog-button
+  box-sizing: border-box
+  color: #ffffff
+  padding: 12px 40px
+  cursor: pointer
+
+.confirm
+  @extend .dialog-button
+  background-color: #87bae1
+  float: left
+  +border-btn
+  
+.cancel
+  @extend .dialog-button
+  margin-left: 400px
+  background-color: #b9a9af
+  +border-btn
+
+ul
+
+  li
+    padding: 15px
+    display: inline-block
+
+    a
+      text-decoration: none
+      font-size: 16px
+      color: #444
+
+.container
+  margin: 30px
+  width: $width
+
+.column-half
+  width: $width / 2  
+
+a
+  padding: 20px
+  background-color: $awesome-blue
+
+  &:hover
+    background-color: lighten($color, 10%)
