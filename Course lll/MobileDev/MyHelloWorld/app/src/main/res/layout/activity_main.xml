@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/num1"
+            android:layout_width="355dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="208dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="449dp"
+            android:ems="10"
+            android:hint="Число 1"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/num2"
+            android:layout_width="355dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="39dp"
+            android:ems="10"
+            android:hint="Число 2"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/sum"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/num1" />
+
+        <TextView
+            android:id="@+id/res"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginEnd="200dp"
+            android:layout_marginBottom="172dp"
+            android:text="Результат"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.339"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="200dp"
+            android:layout_marginBottom="61dp"
+            android:onClick="onButtonClick"
+            android:text="+"
+            app:layout_constraintBottom_toTopOf="@+id/res"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/num2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

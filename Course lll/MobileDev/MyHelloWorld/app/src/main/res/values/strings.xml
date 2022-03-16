@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Баранов ПИ19-3</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Баранов ПИ19-3</string>
+    <string name="second_fragment_label">Баранов ПИ19-3</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Привет мир!</string>
+</resources>
