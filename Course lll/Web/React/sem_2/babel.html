@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>babel</title>
+
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="example"></div>
+    <div id="example_func"></div>
+    <div id="example_var"></div>
+    <div id="example_class"></div>
+    <div id="example_timer"></div>
+
+    <script type="text/babel">
+
+        const gr = {
+            color: 'green'
+        };
+
+        ReactDOM.render(
+            <div style={gr}><h2>1) Hail!</h2></div>,
+            document.getElementById("example")
+        );
+        function Hello() {
+            return <h2>2) Привет от функции</h2>;
+        }
+        var Hello_var = () => {
+            return (<h2 style={gr}>3) Hello from variables</h2>);
+        }
+
+        class Hello_Class extends React.Component {
+            render() {
+                return <h2>4) Greetings from Class method</h2>;
+            }
+        }
+
+        ReactDOM.render(
+            Hello(),
+            document.getElementById("example_func"));
+
+        ReactDOM.render(
+            Hello_var(),
+            document.getElementById("example_var"));
+
+        ReactDOM.render(
+            <Hello_Class />,
+            document.getElementById("example_class"));
+
+
+        class Timer extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = { seconds: 0 };
+            }
+
+            tick() {
+                this.setState(state => ({
+                    seconds: state.seconds + 1
+                }));
+            }
+
+            componentDidMount() {
+                this.interval = setInterval(() => this.tick(), 1000);
+            }
+
+            componentWillUnmount() {
+                clearInterval(this.interval);
+            }
+
+            render() {
+                return (
+                    <div>
+                        <h2>Seconds: {this.state.seconds} </h2>
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(
+            <Timer />,
+            document.getElementById('example_timer')
+        );
+
+    </script>
+
+</body>
+
+</html>
