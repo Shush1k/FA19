@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.app.task2_2">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.task2_2">
+        <activity
+            android:name=".TextStyleSetAlign"
+            android:exported="false" />
+        <activity
+            android:name=".TextStyleSetColor"
+            android:exported="false" />
+        <activity
+            android:name=".TextStyleEditor"
+            android:exported="false"
+            android:label="Style editor" />
+        <activity
+            android:name=".SetResultActivity"
+            android:exported="false"
+            android:label="Set result activity" />
+        <activity
+            android:name=".ActivityTime"
+            android:exported="false"
+            android:label="Time basic">
+            <intent-filter>
+                <action android:name="com.app.task2_2.intent.action.showtime" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Info"
+            android:exported="false"
+            android:label="Info">
+            <intent-filter>
+                <action android:name="com.app.task2_2.intent.action.showdate" />
+                <action android:name="com.app.task2_2.intent.action.showtime" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ActivityDate"
+            android:exported="false"
+            android:label="Date basic">
+            <intent-filter>
+                <action android:name="com.app.task2_2.intent.action.showdate" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
