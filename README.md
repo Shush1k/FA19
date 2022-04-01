@@ -19,7 +19,10 @@
 
 
 [![Course III](https://img.shields.io/badge/Course-III-blue?style=plastic)](https://github.com/Shush1k/FA19/tree/master/Course%20lll)
-* [🆔 TOBD](https://github.com/Shush1k/FA19/tree/master/Course%20lll/TOBD)
-* [🕸 WEB](https://github.com/Shush1k/FA19/tree/master/Course%20lll/Web)
-* [:book: English](https://github.com/Shush1k/FA19/tree/master/Course%20lll/English)
-* [♿ Excel](https://github.com/Shush1k/FA19/tree/master/Course%20lll/Excel)
+* [🆔 TOBD](https://github.com/Shush1k/FA19/tree/master/Course%20lll/TOBD) (Технологии обработки больших данных)
+* [:dollar: FinMath](https://github.com/Shush1k/FA19/tree/master/Course%20lll/FinMath) (Финансовая математика)
+* [🕸 WEB](https://github.com/Shush1k/FA19/tree/master/Course%20lll/Web) (Web приложения)
+* [:book: English](https://github.com/Shush1k/FA19/tree/master/Course%20lll/English) (Английский)
+* [♿ Excel](https://github.com/Shush1k/FA19/tree/master/Course%20lll/Excel) (Обработка данных в Excel)
+* [:iphone: MobileDev](https://github.com/Shush1k/FA19/tree/master/Course%20lll/MobileDev) (Мобильная разработка)
+* [:m: ML](https://github.com/Shush1k/FA19/tree/master/Course%20lll/ML) (Машинное обучение)
