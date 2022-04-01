@@ -1,9 +1,16 @@
-# Практические задания
-Семинары TOBD
+# Практические задания по TOBD
+### Задания по дисциплине 'Технологии обработки больших данных' 
 - [01_numpy](https://github.com/Shush1k/FA19/blob/master/Course%20lll/TOBD/pract1/01_numpy_Baranov_Aleksandr.ipynb)
 - [02_pandas](https://github.com/Shush1k/FA19/blob/master/Course%20lll/TOBD/pract2/02_pandas_Baranov_Aleksandr.ipynb)
 - [03_profiling](https://github.com/Shush1k/FA19/blob/master/Course%20lll/TOBD/pract3/03_profiling_Baranov_Aleksandr.ipynb)
 - [04_data_files](https://github.com/Shush1k/FA19/blob/master/Course%20lll/TOBD/pract4/04_data_files_Baranov_Aleksandr.ipynb)
 - [05_data_files_2](https://github.com/Shush1k/FA19/blob/master/Course%20lll/TOBD/pract5/05_data_files_2_Baranov_Aleksandr.ipynb)
 - [06_database](https://github.com/Shush1k/FA19/blob/master/Course%20lll/TOBD/pract6/06_database_Baranov_Aleksandr.ipynb)
-
+- [07_excel](https://github.com/Shush1k/FA19/blob/master/Course%20lll/TOBD/pract7/07_excel_Baranov_Aleksandr.ipynb)
+- [08_string](https://github.com/Shush1k/FA19/blob/master/Course%20lll/TOBD/pract8/08_string_Baranov_Aleksandr.ipynb)
+- [09_string_2](https://github.com/Shush1k/FA19/blob/master/Course%20lll/TOBD/pract9/09_string_2_Baranov_Aleksandr.ipynb)
+- [10_multiprocessing](https://github.com/Shush1k/FA19/blob/master/Course%20lll/TOBD/pract10/10_multiprocessing_Baranov_Aleksandr_PI19-3.ipynb)
+- [11_dask_array](https://github.com/Shush1k/FA19/blob/master/Course%20lll/TOBD/pract11/11_dask_array_Baranov_Aleksandr_PI19-3.ipynb)
+- [12_dask_bag](https://github.com/Shush1k/FA19/blob/master/Course%20lll/TOBD/pract12/12_dask_bag_Baranov_Aleksandr_PI19-3.ipynb)
+- [13_dask_dataframe](https://github.com/Shush1k/FA19/blob/master/Course%20lll/TOBD/pract13/13_dask_dataframe_Baranov_Aleksandr_PI19-3.ipynb)
+- [14_delayed](https://github.com/Shush1k/FA19/blob/master/Course%20lll/TOBD/pract14/14_delayed_Baranov_Aleksandr_PI19-3.ipynb)
