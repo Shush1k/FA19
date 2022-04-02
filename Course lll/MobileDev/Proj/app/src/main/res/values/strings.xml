@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">DishesProject</string>
+    <string name="go_btn">Let`s gooooo!</string>
+    <string name="instruction">Введите названия ингредиентов</string>
+    <string name="input_ingredients">Поле ввода ингредиентов</string>
+    <string name="search_btn">Найти рецепты</string>
+    <string name="dishes_results">Результаты подобранных рецептов</string>
+
+    <string name="all_ingredients">молоко;сыр;бекон;яйца куриные;соль</string>
+    <string name="dishes_description">Омлет с беконом и сыром ... ТУТ ОПИСАНИЕ ПРИГОТОВЛЕНИЯ</string>
+
+    <string name="dishes_chosen_desc">Картинка для рецепта, выбранного в activity_result</string>
+    <string name="searching_page_desc">Картинка для background для activity_dishes</string>
+</resources>
